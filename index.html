@@ -72,7 +72,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
         <rect x="13.1" y="18.2" width="1.8" height="16" fill="#080808"></rect>
       </svg>
     </div>
-    <div ref="{{ blobRef }}" style="position:fixed;left:0;top:0;width:46px;height:46px;background:#f1efe9;border-radius:50%;pointer-events:none;z-index:40000;mix-blend-mode:difference;will-change:transform;transform:translate(-200px,-200px) scale(0);display:flex;align-items:center;justify-content:center">
+    <div ref="{{ blobRef }}" style="position:fixed;left:0;top:0;width:46px;height:46px;background:#f1efe9;border-radius:50%;pointer-events:none;z-index:40000;mix-blend-mode:difference;will-change:transform;transform:translate(-200px,-200px);scale:0;display:flex;align-items:center;justify-content:center">
       <span ref="{{ blobLabelRef }}" style="display:none"></span>
     </div>
   </sc-if>
@@ -81,7 +81,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
     <div style="position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:9000;opacity:.04;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
   </sc-if>
 
-  <nav ref="{{ navRef }}" style="position:fixed;top:0;left:0;right:0;z-index:8000;mix-blend-mode:difference;color:#f1efe9;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;transition:transform .45s cubic-bezier(.22,1,.36,1);padding:clamp(14px,2.5vw,22px) clamp(16px,3.5vw,34px)">
+  <nav ref="{{ navRef }}" style="position:fixed;top:0;left:0;right:0;z-index:8000;mix-blend-mode:difference;color:#f1efe9;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;transition:transform .6s cubic-bezier(.16,1,.3,1);padding:clamp(14px,2.5vw,22px) clamp(16px,3.5vw,34px)">
     <a href="#top" data-cursor="TOP" style="display:flex;align-items:center;gap:8px;min-width:0">
       <img src="logo/logo.svg" alt="Studio Ritu" style="width:clamp(40px,4.5vw,50px);height:clamp(40px,4.5vw,50px);display:block;flex-shrink:0">
       <span style="font-family:Anton,sans-serif;font-size:clamp(16px,2vw,20px);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Studio Ritu</span>
@@ -89,7 +89,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
     <div style="display:flex;align-items:center;gap:clamp(14px,2.6vw,34px);font-family:'Space Mono',monospace;font-size:clamp(11px,1.2vw,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase">
       <sc-if value="{{ showNavLinks }}" hint-placeholder-val="{{ false }}">
         <a href="#services" data-cursor="GO" style-hover="opacity:.55">Services</a>
-        <a href="#work" data-cursor="GO" style-hover="opacity:.55">Work</a>
+        <a href="#archive" data-cursor="GO" style-hover="opacity:.55">Work</a>
         <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" data-cursor="OPEN" style-hover="opacity:.55">Portfolio <svg width="12" height="12" viewBox="0 0 12 12" style="display:inline;vertical-align:-.2em"><path d="M1 11L11 1M11 1H4.5M11 1V7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
         <a href="#contact" data-cursor="TALK" style="border:2px solid #f1efe9;padding:9px 18px;border-radius:999px;white-space:nowrap" style-hover="background:#f1efe9;color:#080808">Contact</a>
       </sc-if>
@@ -110,7 +110,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
       </div>
       <nav style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1.4vh,14px);font-family:Anton,sans-serif;text-transform:uppercase">
         <a href="#services" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:16px;font-size:clamp(44px,15vw,72px);line-height:1.02;letter-spacing:.01em"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;opacity:.4">01</span>Services</a>
-        <a href="#work" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:16px;font-size:clamp(44px,15vw,72px);line-height:1.02;letter-spacing:.01em"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;opacity:.4">02</span>Work</a>
+        <a href="#archive" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:16px;font-size:clamp(44px,15vw,72px);line-height:1.02;letter-spacing:.01em"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;opacity:.4">02</span>Work</a>
         <a href="#contact" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:16px;font-size:clamp(44px,15vw,72px);line-height:1.02;letter-spacing:.01em"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;opacity:.4">03</span>Contact</a>
         <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:16px;font-size:clamp(44px,15vw,72px);line-height:1.02;letter-spacing:.01em;color:transparent;-webkit-text-stroke:1.5px #f1efe9"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;opacity:.4;-webkit-text-stroke:0;color:#f1efe9">04</span>Portfolio</a>
       </nav>
@@ -147,7 +147,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
     </div>
   </header>
 
-  <section data-screen-label="Archive" style="min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(20px,4vh,44px);padding:16vh clamp(18px,4vw,48px);box-sizing:border-box;border-top:1px solid #232323;border-bottom:1px solid #232323">
+  <section id="archive" data-screen-label="Archive" style="min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(20px,4vh,44px);padding:16vh clamp(18px,4vw,48px);box-sizing:border-box;border-top:1px solid #232323;border-bottom:1px solid #232323">
     <div aria-hidden="true" data-archivelayer="" style="position:absolute;inset:0;z-index:0;opacity:0;transform:scale(.66);will-change:transform,opacity">
       <div style="position:absolute;top:6%;left:12%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(-8deg)"><img src="uploads/pasted-1784548616562-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
       <div style="position:absolute;top:7%;left:40%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(6deg)"><img src="uploads/pasted-1784548737052-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
@@ -174,7 +174,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
       <span>Student_Run</span><span>Established_2026</span>
     </div>
     <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;mix-blend-mode:difference;color:#fff">
-      <div style="position:relative;width:clamp(40px,5vw,76px);height:clamp(40px,5vw,76px);margin-top:-16px"><img src="logo/circle.svg" alt="" style="width:100%;height:100%;display:block"><img src="logo/logo.svg" alt="Studio Ritu" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></div>
+      <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" style="display:block;margin-top:-16px;transition:transform .3s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.08)"><div style="position:relative;width:clamp(40px,5vw,76px);height:clamp(40px,5vw,76px)"><img src="logo/circle.svg" alt="" style="width:100%;height:100%;display:block"><img src="logo/logo.svg" alt="Studio Ritu" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></div></a>
       <div style="display:flex;gap:clamp(10px,1.6vw,22px);font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,12px);letter-spacing:.06em;opacity:.5"><span>( Identity )</span><span>( Content )</span><span>( Print )</span></div>
     </div>
   </section>
@@ -257,21 +257,52 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
     </div>
   </section>
 
-  <section id="work" data-screen-label="Work" style="background:#f1efe9;color:#080808;padding:18vh clamp(18px,4vw,48px);box-sizing:border-box">
+  <section data-screen-label="Featured" style="background:#f1efe9;color:#080808;padding:16vh clamp(18px,4vw,48px) 10vh;position:relative;overflow:hidden">
     <div style="max-width:1560px;margin:0 auto">
-      <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6vh" data-reveal="0">
-        <span style="font-weight:700;letter-spacing:.18em">(04) Selected work</span>
-        <span style="opacity:.5">Archive hosted on Are.na</span>
+      <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 5vh" data-reveal="0">
+        <span style="font-weight:700;letter-spacing:.18em">(04) Featured Work</span>
+        <span style="opacity:.5">Selected projects</span>
       </div>
-      <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" data-cursor="OPEN" data-reveal="80" style="display:block;font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(42px,8.6vw,152px);line-height:.96;margin:0 0 9vh" style-hover="color:transparent;-webkit-text-stroke:1.5px #080808">Full archive on Are.na&nbsp;<span style="font-family:Archivo,sans-serif;font-weight:600">&#8599;</span></a>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(16px,2.5vw,28px)">
-        <div data-reveal="0" style="aspect-ratio:4/5;overflow:hidden"><img src="uploads/pasted-1784548865096-0.png" alt="Selected work 01" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <div data-reveal="120" style="aspect-ratio:4/5;overflow:hidden"><img src="uploads/pasted-1784548798094-0.png" alt="Selected work 02" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-        <div data-reveal="240" style="aspect-ratio:4/5;overflow:hidden"><img src="uploads/pasted-1784548888073-0.png" alt="Selected work 03" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,7vw,118px);line-height:.95;margin:0 0 10vh;letter-spacing:.01em" data-reveal="80">Projects that<br><span style="color:transparent;-webkit-text-stroke:2px #080808">made an impact</span></h2>
+
+      <div style="display:flex;flex-direction:column;gap:clamp(60px,10vh,120px)">
+          <div data-reveal="0" style="position:relative;overflow:hidden;border-radius:clamp(6px,0.6vw,12px)">
+          <div style="position:relative;overflow:hidden;aspect-ratio:16/9;background:#e8e6e0">
+            <img src="uploads/pasted-1784548616562-0.png" alt="Aperture Skincare" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,0) 0%,rgba(8,8,8,0.7) 100%);pointer-events:none"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(28px,4vw,64px);color:#f1efe9;z-index:1">
+            <span style="display:inline-block;font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,12px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:rgba(241,239,233,0.15);backdrop-filter:blur(8px);padding:8px 16px;border-radius:999px;margin-bottom:clamp(12px,2vw,24px)">Packaging</span>
+            <h3 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(36px,5.5vw,96px);line-height:.92;margin:0 0 clamp(12px,1.5vw,20px);letter-spacing:.01em">Aperture Skincare</h3>
+            <p style="font-family:'Space Mono',monospace;font-size:clamp(12px,1.1vw,14px);line-height:1.8;margin:0;max-width:50ch;opacity:.85">A structural packaging and unboxing system built around a warm, tactile palette, rigid boxes, custom inserts and a bottle silhouette engineered for shelf presence.</p>
+            <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" data-cursor="OPEN" style="display:inline-flex;align-items:center;gap:10px;margin-top:clamp(16px,2vw,32px);font-family:'Space Mono',monospace;font-size:clamp(11px,1.1vw,13px);font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid currentColor;padding-bottom:5px;transition:opacity .3s" style-hover="opacity:.6">View Project <svg width="12" height="12" viewBox="0 0 12 12" style="display:inline"><path d="M1 11L11 1M11 1H4.5M11 1V7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+          </div>
+        </div>
+
+        <div data-reveal="120" style="display:grid;grid-template-columns:{{ featuredGridCols }};gap:clamp(20px,3vw,40px);align-items:stretch">
+          <div style="position:relative;overflow:hidden;border-radius:clamp(6px,0.6vw,12px);aspect-ratio:3/4;background:#e8e6e0">
+            <img src="uploads/pasted-1784548737052-0.png" alt="Red Room" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,0) 40%,rgba(8,8,8,0.75) 100%);pointer-events:none"></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(20px,3vw,40px);color:#f1efe9;z-index:1">
+              <span style="display:inline-block;font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,12px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:rgba(241,239,233,0.15);backdrop-filter:blur(8px);padding:8px 16px;border-radius:999px;margin-bottom:clamp(12px,1.5vw,20px)">Exhibition &amp; Print</span>
+              <h3 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(32px,4vw,64px);line-height:.92;margin:0 0 clamp(10px,1.2vw,16px);letter-spacing:.01em">Red Room</h3>
+              <p style="font-family:'Space Mono',monospace;font-size:clamp(11px,1vw,13px);line-height:1.7;margin:0;max-width:38ch;opacity:.85">A poster series and spatial identity for a gallery takeover, staged in saturated red.</p>
+            </div>
+          </div>
+          <div style="position:relative;overflow:hidden;border-radius:clamp(6px,0.6vw,12px);aspect-ratio:3/4;background:#e8e6e0">
+            <img src="uploads/pasted-1784548753654-0.png" alt="Onyx Members" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,0) 40%,rgba(8,8,8,0.75) 100%);pointer-events:none"></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(20px,3vw,40px);color:#f1efe9;z-index:1">
+              <span style="display:inline-block;font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,12px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;background:rgba(241,239,233,0.15);backdrop-filter:blur(8px);padding:8px 16px;border-radius:999px;margin-bottom:clamp(12px,1.5vw,20px)">Identity</span>
+              <h3 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(32px,4vw,64px);line-height:.92;margin:0 0 clamp(10px,1.2vw,16px);letter-spacing:.01em">Onyx Members</h3>
+              <p style="font-family:'Space Mono',monospace;font-size:clamp(11px,1vw,13px);line-height:1.7;margin:0;max-width:38ch;opacity:.85">Matte-black membership cards with blind-embossed marks and gold-foil detailing.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;margin:40px 0 0;opacity:.55" data-reveal="0">
-        <span>Three previews. The full archive lives on Are.na.</span>
-        <span>Updated continuously</span>
+
+      <div data-reveal="200" style="margin-top:clamp(48px,8vh,80px);text-align:center">
+        <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" data-cursor="OPEN" style="display:inline-flex;align-items:center;gap:clamp(10px,1.4vw,18px);font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(24px,3.2vw,48px);line-height:1;letter-spacing:.01em;border:2px solid #080808;border-radius:999px;padding:clamp(12px,1.4vw,20px) clamp(24px,3.2vw,48px);transition:background .35s,color .35s" style-hover="background:#080808;color:#f1efe9">View all work <svg width="0.7em" height="0.7em" viewBox="0 0 12 12" style="display:block;flex-shrink:0"><path d="M1 11L11 1M11 1H4.5M11 1V7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
       </div>
     </div>
   </section>
@@ -324,7 +355,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
       </div>
       <div style="position:relative;display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,2.2vw,26px);padding:clamp(70px,8vw,110px) clamp(28px,6vw,90px) clamp(40px,6vh,72px);overflow:hidden">
         <span aria-hidden="true" style="position:absolute;top:clamp(24px,5vh,60px);right:clamp(20px,4vw,60px);font-family:Anton,sans-serif;font-size:clamp(120px,20vw,300px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(241,239,233,.08);pointer-events:none;user-select:none">SR</span>
-        <span style="position:relative;font-family:'Space Mono',monospace;font-size:clamp(11px,1.1vw,13px);font-weight:700;letter-spacing:.24em;text-transform:uppercase;opacity:.55;animation:lbRise .8s cubic-bezier(.16,1,.3,1) .18s both">— {{ lbTag }}</span>
+        <span style="position:relative;font-family:'Space Mono',monospace;font-size:clamp(11px,1.1vw,13px);font-weight:700;letter-spacing:.24em;text-transform:uppercase;opacity:.55;animation:lbRise .8s cubic-bezier(.16,1,.3,1) .18s both">{{ lbTag }}</span>
         <h2 style="position:relative;font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(46px,6.5vw,116px);line-height:.9;margin:0;letter-spacing:.01em;text-wrap:balance;animation:lbRise .8s cubic-bezier(.16,1,.3,1) .26s both">{{ lbTitle }}</h2>
         <p style="position:relative;font-family:'Space Mono',monospace;font-size:clamp(13px,1.15vw,16px);line-height:1.75;letter-spacing:.02em;margin:0;max-width:46ch;opacity:.85;text-wrap:pretty;animation:lbRise .8s cubic-bezier(.16,1,.3,1) .34s both">{{ lbDesc }}</p>
         <div style="position:relative;display:flex;align-items:center;gap:clamp(20px,3vw,44px);flex-wrap:wrap;margin-top:clamp(8px,1.5vh,18px);animation:lbRise .8s cubic-bezier(.16,1,.3,1) .42s both">
@@ -341,15 +372,15 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
 class Component extends DCLogic {
   state = { open: 0, isMobile: false, loaded: false, lb: null, menuOpen: false };
   _archiveCaptions = {
-    'pasted-1784548616562-0.png': { tag: 'Packaging', title: 'Aperture Skincare', desc: 'A structural packaging and unboxing system built around a warm, tactile palette — rigid boxes, custom inserts and a bottle silhouette engineered for shelf presence.' },
-    'pasted-1784548682802-0.png': { tag: 'Apparel & Merch', title: 'North Medium', desc: 'Screen-printed graphics and a full merch line for a coastal streetwear label, from back-print artwork to woven labels and lookbook art direction.' },
-    'pasted-1784548737052-0.png': { tag: 'Exhibition & Print', title: 'Red Room', desc: 'A poster series and spatial identity for a gallery takeover, staged in saturated red — framed prints, wall system and a bold, room-filling typographic voice.' },
+    'pasted-1784548616562-0.png': { tag: 'Packaging', title: 'Aperture Skincare', desc: 'A structural packaging and unboxing system built around a warm, tactile palette, rigid boxes, custom inserts and a bottle silhouette engineered for shelf presence.' },
+    'pasted-1784548682802-0.png': { tag: 'Apparel & Merch', title: 'Revival', desc: 'Screen-printed graphics and a full merch line for a coastal streetwear label, from back-print artwork to woven labels and lookbook art direction.' },
+    'pasted-1784548737052-0.png': { tag: 'Exhibition & Print', title: 'Red Room', desc: 'A poster series and spatial identity for a gallery takeover, staged in saturated red, framed prints, wall system and a bold, room-filling typographic voice.' },
     'pasted-1784548753654-0.png': { tag: 'Identity', title: 'Onyx Members', desc: 'Matte-black membership cards with blind-embossed marks and gold-foil detailing, part of a wider identity built on restraint, weight and touch.' },
-    'pasted-1784548774228-0.png': { tag: 'Editorial', title: 'Vogue Feature', desc: 'A fashion editorial layout exploring scale, overlap and cover typography — masthead treatments and spreads that let the imagery breathe.' },
-    'pasted-1784548798094-0.png': { tag: 'Book Design', title: 'Milk & Honey', desc: 'Cover design and interior typesetting for a poetry collection — quiet type, generous margins and a mark that carries across the series.' },
-    'pasted-1784548865096-0.png': { tag: 'Stationery', title: 'Check-Um Notepad', desc: 'A notepad and stationery system for a studio-run print imprint — grids, cover stock and a everyday object designed to be kept.' },
-    'pasted-1784548847449-0.png': { tag: 'Web & Art Direction', title: 'Nightshift', desc: 'Interface design and art direction for a late-hours product, shot on-desk — a dark, focused UI system built for long sessions.' },
-    'pasted-1784548888073-0.png': { tag: 'Signage', title: 'Street Banners', desc: 'Hand-drawn character banners and wayfinding for a market district — large-format signage that turns a street into an identity.' }
+    'pasted-1784548774228-0.png': { tag: 'Editorial', title: 'Vogue Feature', desc: 'A fashion editorial layout exploring scale, overlap and cover typography, masthead treatments and spreads that let the imagery breathe.' },
+    'pasted-1784548798094-0.png': { tag: 'Book Design', title: 'Milk & Honey', desc: 'Cover design and interior typesetting for a poetry collection, quiet type, generous margins and a mark that carries across the series.' },
+    'pasted-1784548865096-0.png': { tag: 'Stationery', title: 'Check-Um Notepad', desc: 'A notepad and stationery system for a studio-run print imprint, grids, cover stock and a everyday object designed to be kept.' },
+    'pasted-1784548847449-0.png': { tag: 'Web & Art Direction', title: 'Nightshift', desc: 'Interface design and art direction for a late-hours product, shot on-desk, a dark, focused UI system built for long sessions.' },
+    'pasted-1784548888073-0.png': { tag: 'Signage', title: 'Street Banners', desc: 'Hand-drawn character banners and wayfinding for a market district, large-format signage that turns a street into an identity.' }
   };
   servicesData = [
     { title: 'Brand Identity', slotId: 'svc-brand', src: 'uploads/pasted-1784548753654-0.png', desc: 'Names, marks and systems built to be recognised quickly and remembered longer. Identity work that holds up everywhere it appears.', placeholder: 'Drop a brand identity example' },
@@ -406,6 +437,7 @@ class Component extends DCLogic {
       ethosCols: this.state.isMobile ? '1fr' : '1fr auto',
       ethosBadgeJustify: this.state.isMobile ? 'start' : 'end',
       ethosBadgeMarginTop: this.state.isMobile ? '32px' : '0',
+      featuredGridCols: this.state.isMobile ? '1fr' : '1fr 1fr',
       penRef: el => { this.pen = el; },
       hsWrapRef: el => { this.hsWrap = el; },
       hsTrackRef: el => { this.hsTrack = el; },
@@ -560,12 +592,13 @@ class Component extends DCLogic {
       const sc = this._scroller();
       const scTop = (sc === document.scrollingElement || sc === document.documentElement || sc === document.body) ? 0 : sc.getBoundingClientRect().top;
       const target = Math.max(0, el.getBoundingClientRect().top - scTop + sc.scrollTop);
-      if (this._smoothTo(target)) return;
+      if (this._smoothTo(target)) { this._anchorHideNav = true; return; }
       const start = sc.scrollTop, diff = target - start, t0 = performance.now(), dur = 680;
       const step = now => {
         const p = Math.min(1, (now - t0) / dur), e2 = 1 - Math.pow(1 - p, 3);
         sc.scrollTop = start + diff * e2;
         if (p < 1) requestAnimationFrame(step);
+        else if (this.nav && !this._navHidden) { this._navHidden = true; this.nav.style.transform = 'translateY(-130%)'; }
       };
       requestAnimationFrame(step);
     };
@@ -574,8 +607,13 @@ class Component extends DCLogic {
       if (!this.nav) return;
       if (e.clientY <= 90 && this._navHidden) {
         this._navHidden = false;
+        this._navPeeked = true;
         this._navRefY = this._getY();
         this.nav.style.transform = 'none';
+      } else if (e.clientY > 120 && this._navPeeked && !this._navHidden) {
+        this._navHidden = true;
+        this._navPeeked = false;
+        this.nav.style.transform = 'translateY(-130%)';
       }
     };
     document.addEventListener('mousemove', this._onNavPeek, { passive: true });
@@ -602,10 +640,13 @@ class Component extends DCLogic {
       const yNow = this._getY();
       if (yNow !== this._lastFxY) { this._lastFxY = yNow; this._fx(); }
       if (this._cursorLive && this.blob) {
+        if (this._hot && !this._wasHot) { this._bx = this._cx; this._by = this._cy; }
+        this._wasHot = this._hot;
         this._bx += (this._cx - this._bx) * 0.13;
         this._by += (this._cy - this._by) * 0.13;
         const s = this._hot ? 1 : 0;
-        this.blob.style.transform = 'translate(' + this._bx + 'px,' + this._by + 'px) translate(-50%,-50%) scale(' + s + ')';
+        this.blob.style.transform = 'translate(' + this._bx + 'px,' + this._by + 'px) translate(-50%,-50%)';
+        this.blob.style.scale = s;
         if (this.blobLabel) this.blobLabel.style.opacity = this._hot ? '1' : '0';
       }
       if (this.hero && this._fine) {
@@ -667,7 +708,10 @@ class Component extends DCLogic {
       this._sTargetPrev = this._sTarget;
       const d = this._sTarget - this._sCur;
       this._sCur += d * lerp;
-      if (Math.abs(d) < 0.35) this._sCur = this._sTarget;
+      if (Math.abs(d) < 0.35) {
+        this._sCur = this._sTarget;
+        if (this._anchorHideNav) { this._anchorHideNav = false; if (this.nav && !this._navHidden) { this._navHidden = true; this.nav.style.transform = 'translateY(-130%)'; } }
+      }
       const v = Math.round(this._sCur);
       if (v !== this._sLast) { sc.scrollTop = v; this._sLast = v; }
       this._smoothRAF = requestAnimationFrame(tick);
@@ -750,7 +794,6 @@ class Component extends DCLogic {
       const p = (vh - r.top) / (vh + r.height);
       el.style.transform = 'translateX(' + ((0.5 - p) * 100 * f) + 'vw)';
     });
-    if (this.scrollHint) this.scrollHint.style.opacity = y > 40 ? '0' : '1';
     if (this.nav) {
       if (this._navRefY == null) this._navRefY = y;
       if (y > this._navRefY + 8 && y > vh * 0.55) {
@@ -816,17 +859,6 @@ class Component extends DCLogic {
         w.style.transform = on ? 'none' : 'translateY(6px)';
         w.style.transition = 'opacity .35s, transform .35s';
       });
-    }
-    const fw = document.querySelector('[data-fillwrap]');
-    if (fw) {
-      const r = fw.getBoundingClientRect();
-      if (r.bottom > -100 && r.top < vh + 100) {
-        const p = Math.max(0, Math.min(1, (vh * 0.75 - r.top) / (r.height * 0.55)));
-        const words = fw.querySelectorAll('[data-word]');
-        const n = words.length;
-        const lit = p * n;
-        words.forEach((w, i) => { w.style.color = i < lit ? '#080808' : '#cfccc2'; });
-      }
     }
   }
   componentDidUpdate() {
