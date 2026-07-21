@@ -265,7 +265,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
       <p style="font-family:'Space Mono',monospace;font-size:clamp(12px,1.1vw,14px);line-height:1.8;max-width:50ch;margin:0 0 10vh;opacity:.6" data-reveal="120">A selection of work where strategy, identity and craft come together to create something people remember.</p>
 
       <div style="display:flex;flex-direction:column;gap:clamp(60px,10vh,120px)">
-          <div data-reveal="160" data-featured="0" style="position:relative;overflow:hidden;border-radius:clamp(6px,0.6vw,12px);cursor:pointer">
+          <div data-reveal="160" data-featured="0" style="position:relative;overflow:hidden;border-radius:clamp(6px,0.6vw,12px);cursor:pointer;transition:transform .3s cubic-bezier(.16,1,.3,1)">
           <div style="position:relative;overflow:hidden;aspect-ratio:16/9;background:#e8e6e0">
             <img src="uploads/pasted-1784548616562-0.png" alt="Aperture Skincare" data-featured-img style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .8s cubic-bezier(.16,1,.3,1)">
           </div>
@@ -279,7 +279,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
         </div>
 
         <div data-reveal="320" style="display:grid;grid-template-columns:{{ featuredGridCols }};gap:clamp(20px,3vw,40px);align-items:stretch">
-          <div data-featured="1" style="position:relative;overflow:hidden;border-radius:clamp(6px,0.6vw,12px);aspect-ratio:3/4;background:#e8e6e0;cursor:pointer">
+          <div data-featured="1" style="position:relative;overflow:hidden;border-radius:clamp(6px,0.6vw,12px);aspect-ratio:3/4;background:#e8e6e0;cursor:pointer;transition:transform .3s cubic-bezier(.16,1,.3,1)">
             <img src="uploads/pasted-1784548737052-0.png" alt="Red Room" data-featured-img style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .8s cubic-bezier(.16,1,.3,1)">
             <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,0) 40%,rgba(8,8,8,0.75) 100%);pointer-events:none"></div>
             <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(20px,3vw,40px);color:#f1efe9;z-index:1">
@@ -288,7 +288,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
               <p style="font-family:'Space Mono',monospace;font-size:clamp(11px,1vw,13px);line-height:1.7;margin:0;max-width:38ch;opacity:.85">A poster series and spatial identity for a gallery takeover, staged in saturated red.</p>
             </div>
           </div>
-          <div data-featured="2" style="position:relative;overflow:hidden;border-radius:clamp(6px,0.6vw,12px);aspect-ratio:3/4;background:#e8e6e0;cursor:pointer">
+          <div data-featured="2" style="position:relative;overflow:hidden;border-radius:clamp(6px,0.6vw,12px);aspect-ratio:3/4;background:#e8e6e0;cursor:pointer;transition:transform .3s cubic-bezier(.16,1,.3,1)">
             <img src="uploads/pasted-1784548753654-0.png" alt="Onyx Members" data-featured-img style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .8s cubic-bezier(.16,1,.3,1)">
             <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,0) 40%,rgba(8,8,8,0.75) 100%);pointer-events:none"></div>
             <div style="position:absolute;bottom:0;left:0;right:0;padding:clamp(20px,3vw,40px);color:#f1efe9;z-index:1">
@@ -864,14 +864,14 @@ class Component extends DCLogic {
   _setupFeaturedHover() {
     document.querySelectorAll('[data-featured]').forEach(card => {
       const img = card.querySelector('[data-featured-img]');
-      if (!img) return;
       card.addEventListener('mousemove', e => {
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        img.style.transform = 'scale(1.08) translate(' + (x * -12) + 'px,' + (y * -12) + 'px)';
+        card.style.transform = 'perspective(800px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg) scale(1.015)';
+        if (img) img.style.transform = 'scale(1.08) translate(' + (x * -12) + 'px,' + (y * -12) + 'px)';
       });
-      card.addEventListener('mouseleave', () => { img.style.transform = 'scale(1)'; });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; if (img) img.style.transform = 'scale(1)'; });
     });
   }
   componentDidUpdate() {
