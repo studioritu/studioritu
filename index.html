@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="logo/favicon.svg">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#080808;color:#EFE8D8;font-family:Archivo,Helvetica,sans-serif;overflow-x:hidden}
+img{-webkit-user-drag:none}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+::selection{background:#EA3C1E;color:#EFE8D8}
+[data-archivelayer]>div{outline:0 solid #EA3C1E;outline-offset:2px;transition:outline-width .28s cubic-bezier(.16,1,.3,1),z-index 0s}
+[data-archivelayer]>div:hover{outline-width:4px;z-index:5}
+html{scroll-behavior:smooth}
+body{scrollbar-width:none;-ms-overflow-style:none}
+body::-webkit-scrollbar{display:none;width:0;height:0}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+@keyframes rise{from{transform:translateY(105%)}to{transform:translateY(0)}}
+@keyframes lbIn{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:none}}
+@keyframes lbImg{from{transform:scale(1.14);opacity:.3}to{transform:scale(1);opacity:1}}
+@keyframes lbRise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
+@keyframes swap{0%,40%{transform:translateY(0)}50%,90%{transform:translateY(-50%)}100%{transform:translateY(0)}}
+@keyframes labelSlide{from{transform:translateX(-120%)}to{transform:translateX(0)}}
+</style>
+</helmet>
+<div id="top" data-screen-label="Studio Ritu" style="background:#080808;color:#EFE8D8;min-height:100vh;position:relative">
+
+  <sc-if value="{{ showLoader }}" hint-placeholder-val="{{ true }}">
+    <div ref="{{ loaderRef }}" style="position:fixed;inset:0;z-index:20000;background:#080808;color:#EFE8D8;overflow:hidden;clip-path:inset(0 0 0 0);transition:clip-path 1s cubic-bezier(.76,0,.24,1);will-change:clip-path">
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;pointer-events:none;font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(60px,13vw,190px);line-height:1.02;white-space:nowrap;opacity:.16">
+        <div style="display:flex;width:max-content;animation:marquee 26s linear infinite"><span>Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;</span><span>Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;</span></div>
+        <div style="display:flex;width:max-content;animation:marquee 20s linear infinite reverse;color:transparent;-webkit-text-stroke:1.5px #EFE8D8"><span>Human-Made&nbsp;•&nbsp;Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;Studio Ritu&nbsp;•&nbsp;</span><span>Human-Made&nbsp;•&nbsp;Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;Studio Ritu&nbsp;•&nbsp;</span></div>
+        <div style="display:flex;width:max-content;animation:marquee 32s linear infinite"><span>Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;</span><span>Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;Studio Ritu&nbsp;•&nbsp;Human-Made&nbsp;•&nbsp;</span></div>
+      </div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 6vw">
+        <div style="background:#080808;border-top:2px solid #EFE8D8;border-bottom:2px solid #EFE8D8;padding:clamp(14px,3vh,34px) clamp(28px,6vw,90px);display:flex;align-items:center;gap:clamp(16px,3vw,40px)">
+          <span style="width:clamp(12px,1.6vw,20px);height:clamp(12px,1.6vw,20px);background:#EA3C1E;display:inline-block;flex-shrink:0;animation:spinSlow 8s linear infinite"></span>
+          <div style="position:relative;font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(52px,12vw,180px);line-height:1;letter-spacing:.01em;white-space:nowrap">
+            <span style="color:transparent;-webkit-text-stroke:1.5px #EFE8D8">Human-Made</span>
+            <span ref="{{ loaderWordRef }}" style="position:absolute;left:0;top:0;color:#EFE8D8;clip-path:inset(0 100% 0 0);will-change:clip-path">Human-Made</span>
+          </div>
+        </div>
+      </div>
+      <div style="position:fixed;left:clamp(18px,4vw,48px);top:clamp(20px,5vh,44px);display:flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.7"><span style="width:9px;height:9px;background:#EFE8D8;display:inline-block"></span>Studio Ritu</div>
+      <div style="position:fixed;right:clamp(18px,4vw,48px);top:clamp(20px,5vh,44px);font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.7">Loading</div>
+      <div ref="{{ loaderNumRef }}" style="position:fixed;left:clamp(18px,4vw,48px);bottom:clamp(-6px,1.6vh,14px);font-family:Anton,sans-serif;font-size:clamp(110px,28vw,380px);line-height:.72;letter-spacing:-.02em;opacity:.9">00</div>
+      <div style="position:fixed;right:clamp(18px,4vw,48px);bottom:clamp(24px,6vh,52px);text-align:right;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.5">Est. 2026</div>
+      <div style="position:fixed;left:0;bottom:0;width:100%;height:4px;background:rgba(241,239,233,.12)">
+        <div ref="{{ loaderBarRef }}" style="height:100%;width:0%;background:#EA3C1E"></div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ cursorOn }}" hint-placeholder-val="{{ false }}">
+    <div ref="{{ penRef }}" style="position:fixed;left:0;top:0;pointer-events:none;z-index:40001;mix-blend-mode:difference;will-change:transform;transform:translate(-100px,-100px)">
+      <svg width="28" height="40" viewBox="0 0 28 40" style="display:block;transform:rotate(135deg);transform-origin:14px 38px">
+        <rect x="10" y="0" width="8" height="5" rx="1" fill="#EFE8D8"></rect>
+        <path d="M14 38 C7.5 29 4 21.5 4 14.5 C4 8 8.5 3.5 14 3.5 C19.5 3.5 24 8 24 14.5 C24 21.5 20.5 29 14 38 Z" fill="#EFE8D8"></path>
+        <circle cx="14" cy="15" r="3.2" fill="#080808"></circle>
+        <rect x="13.1" y="18.2" width="1.8" height="16" fill="#080808"></rect>
+      </svg>
+    </div>
+    <div ref="{{ blobRef }}" style="position:fixed;left:0;top:0;width:46px;height:46px;background:#EFE8D8;border-radius:50%;pointer-events:none;z-index:40000;mix-blend-mode:difference;will-change:transform;transform:translate(-200px,-200px);scale:0;display:flex;align-items:center;justify-content:center">
+      <span ref="{{ blobLabelRef }}" style="display:none"></span>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ grainOn }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:9000;opacity:.04;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+  </sc-if>
+
+  <nav ref="{{ navRef }}" style="position:fixed;top:0;left:0;right:0;z-index:8000;color:#EFE8D8;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;transition:transform .6s cubic-bezier(.16,1,.3,1);padding:clamp(14px,2.5vw,22px) clamp(16px,3.5vw,34px)">
+    <a href="#top" data-cursor="TOP" style="display:flex;align-items:center;gap:8px;min-width:0">
+      <img ref="{{ navLogoRef }}" src="logo/logo.svg" alt="Studio Ritu" style="width:clamp(40px,4.5vw,50px);height:clamp(40px,4.5vw,50px);display:block;flex-shrink:0">
+      <span style="font-family:Anton,sans-serif;font-size:clamp(16px,2vw,20px);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap">Studio Ritu</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:clamp(14px,2.6vw,34px);font-family:'Space Mono',monospace;font-size:clamp(11px,1.2vw,13px);font-weight:700;letter-spacing:.12em;text-transform:uppercase">
+      <sc-if value="{{ showNavLinks }}" hint-placeholder-val="{{ false }}">
+        <a href="#services" data-cursor="GO">Services</a>
+        <a href="#archive" data-cursor="GO">Work</a>
+        <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" data-cursor="OPEN">Portfolio <svg width="12" height="12" viewBox="0 0 12 12" style="display:inline;vertical-align:-.2em"><path d="M1 11L11 1M11 1H4.5M11 1V7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <a ref="{{ contactBtnRef }}" href="#contact" data-cursor="TALK" style="border:2px solid #EA3C1E;color:#EA3C1E;background:transparent;padding:9px 18px;border-radius:999px;white-space:nowrap;transition:background .3s,color .3s,border-color .3s">Contact</a>
+      </sc-if>
+      <sc-if value="{{ isMobileNav }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ toggleMenu }}" aria-label="Menu" style="width:46px;height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:none;border:0;padding:0;cursor:pointer;color:inherit">
+          <span style="width:26px;height:2px;background:currentColor;display:block"></span>
+          <span style="width:26px;height:2px;background:currentColor;display:block"></span>
+        </button>
+      </sc-if>
+    </div>
+  </nav>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:9500;background:#080808;color:#EFE8D8;display:flex;flex-direction:column;padding:clamp(18px,5vh,28px) clamp(20px,6vw,40px) clamp(30px,6vh,48px);box-sizing:border-box;animation:lbIn .35s cubic-bezier(.22,1,.36,1) both">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <span style="font-family:Anton,sans-serif;font-size:20px;letter-spacing:.06em;text-transform:uppercase">Studio Ritu</span>
+        <button type="button" onClick="{{ closeMenu }}" aria-label="Close menu" style="width:46px;height:46px;display:flex;align-items:center;justify-content:center;background:none;border:0;padding:0;cursor:pointer;color:inherit"><svg width="24" height="24" viewBox="0 0 24 24" style="display:block"><path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+      </div>
+      <nav style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1.4vh,14px);font-family:Anton,sans-serif;text-transform:uppercase">
+        <a href="#services" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:16px;font-size:clamp(44px,15vw,72px);line-height:1.02;letter-spacing:.01em"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;opacity:.4">01</span>Services</a>
+        <a href="#archive" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:16px;font-size:clamp(44px,15vw,72px);line-height:1.02;letter-spacing:.01em"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;opacity:.4">02</span>Work</a>
+        <a href="#contact" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:16px;font-size:clamp(44px,15vw,72px);line-height:1.02;letter-spacing:.01em"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;opacity:.4">03</span>Contact</a>
+        <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:16px;font-size:clamp(44px,15vw,72px);line-height:1.02;letter-spacing:.01em;color:transparent;-webkit-text-stroke:1.5px #EFE8D8"><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;opacity:.4;-webkit-text-stroke:0;color:#EFE8D8">04</span>Portfolio</a>
+      </nav>
+      <div style="display:flex;justify-content:space-between;gap:16px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.5">
+        <span>Human-Made</span>
+        <a href="mailto:studioritu.official@gmail.com" style="color:inherit">Write us</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <a href="#top" ref="{{ toTopRef }}" aria-label="Back to top" style="position:fixed;right:clamp(18px,3vw,34px);bottom:clamp(18px,3vw,34px);z-index:8500;width:clamp(52px,4vw,62px);height:clamp(52px,4vw,62px);border-radius:50%;border:1px solid #EFE8D8;background:#080808;color:#EFE8D8;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .4s ease,transform .4s ease,background .3s ease,color .3s ease,border-color .3s ease" style-hover="transform:scale(1.08)"><svg width="18" height="18" viewBox="0 0 18 18" style="display:block"><path d="M9 15V3M9 3L3.5 8.5M9 3L14.5 8.5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+
+  <header data-screen-label="Hero" style="min-height:{{ heroMinHeight }};display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:{{ heroPaddingTop }} clamp(18px,4vw,48px) 0;box-sizing:border-box;overflow:hidden">
+    <div style="position:absolute;top:calc(38vh + 45px);right:clamp(18px,10vw,150px);width:clamp(88px,24vw,360px);opacity:{{ heroLogoOpacity }};z-index:0;pointer-events:none" data-para="0.14">
+      <div style="position:relative;width:100%;filter:brightness(0.94) sepia(0.14) saturate(0.75)"><img src="logo/circle.svg" alt="" style="width:100%;display:block;animation:spinSlow 60s linear infinite"><img src="logo/logo.svg" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></div>
+    </div>
+    <p style="position:relative;z-index:1;font-family:'Space Mono',monospace;font-size:clamp(12px,1.3vw,14px);font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 {{ heroEyebrowMargin }};display:flex;align-items:center;gap:12px;flex-wrap:wrap;animation:fadeUp 1s cubic-bezier(.22,1,.36,1) .1s both">
+      <span style="width:10px;height:10px;background:#EA3C1E;display:inline-block;flex-shrink:0"></span>
+      Independent design studio. Human-Made.
+    </p>
+    <h1 ref="{{ heroRef }}" style="position:relative;z-index:1;font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(42px,12.5vw,214px);line-height:.94;margin:0;letter-spacing:.01em;will-change:transform">
+      <span data-para="0.05" style="display:block;overflow:hidden"><span style="display:block;animation:rise 1.1s cubic-bezier(.22,1,.36,1) both">We Make you</span></span>
+      <span data-para="0.1" style="display:block;overflow:hidden"><span style="display:block;color:transparent;-webkit-text-stroke:1.5px #EFE8D8;animation:rise 1.1s cubic-bezier(.22,1,.36,1) .1s both">Impossible</span></span>
+      <span data-para="0.16" style="display:block;overflow:hidden"><span style="display:block;animation:rise 1.1s cubic-bezier(.22,1,.36,1) .2s both">To dismiss</span></span>
+    </h1>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;margin:{{ heroMetaMargin }};font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;flex-wrap:wrap;animation:fadeUp 1s cubic-bezier(.22,1,.36,1) .5s both">
+      <span style="text-transform:uppercase;font-weight:700">Strategy / Identity / Content / Web / Print</span>
+    </div>
+    <div data-marquee="" style="border-top:2px solid #EFE8D8;border-bottom:2px solid #EFE8D8;overflow:hidden;margin:0 clamp(-48px,-4vw,-18px)">
+      <div data-marquee-track="" style="display:flex;width:max-content;animation:marquee 22s linear infinite;font-family:Anton,sans-serif;font-size:clamp(28px,3.8vw,46px);text-transform:uppercase;padding:12px 0;white-space:nowrap;align-items:center;will-change:transform;transform:translateZ(0);backface-visibility:hidden">
+        <span style="white-space:nowrap"><span style="color:transparent;-webkit-text-stroke:1.5px #EFE8D8">Studio Ritu</span><span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span>Content<span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span><span style="color:transparent;-webkit-text-stroke:1.5px #EFE8D8">Brand</span><span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span>Packaging<span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span><span style="color:transparent;-webkit-text-stroke:1.5px #EFE8D8">Posters</span><span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span>Everything<span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span></span>
+        <span style="white-space:nowrap"><span style="color:transparent;-webkit-text-stroke:1.5px #EFE8D8">Studio Ritu</span><span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span>Content<span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span><span style="color:transparent;-webkit-text-stroke:1.5px #EFE8D8">Brand</span><span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span>Packaging<span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span><span style="color:transparent;-webkit-text-stroke:1.5px #EFE8D8">Posters</span><span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span>Everything<span style="display:inline-block;width:.24em;height:.24em;background:#EFE8D8;vertical-align:middle;margin:0 .55em"></span></span>
+      </div>
+    </div>
+  </header>
+
+  <section id="archive" data-screen-label="Archive" style="min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(20px,4vh,44px);padding:16vh clamp(18px,4vw,48px);box-sizing:border-box;border-top:1px solid #232323;border-bottom:1px solid #232323">
+    <div aria-hidden="true" data-archivelayer="" style="position:absolute;inset:0;z-index:0;opacity:0;transform:scale(.66);will-change:transform,opacity">
+      <div style="position:absolute;top:6%;left:12%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(-8deg)"><img src="uploads/pasted-1784548616562-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:7%;left:40%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(6deg)"><img src="uploads/pasted-1784548737052-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:5%;left:66%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(-6deg)"><img src="uploads/pasted-1784548753654-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:8%;left:85%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(9deg)"><img src="uploads/pasted-1784548774228-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:27%;left:4%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(7deg)"><img src="uploads/pasted-1784548682802-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:24%;left:91%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(-8deg)"><img src="uploads/pasted-1784548798094-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:46%;left:6%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(-7deg)"><img src="uploads/pasted-1784548865096-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:44%;left:90%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(8deg)"><img src="uploads/pasted-1784548847449-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:66%;left:4%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(8deg)"><img src="uploads/pasted-1784548888073-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:70%;left:25%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(-6deg)"><img src="uploads/pasted-1784548616562-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:82%;left:58%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(7deg)"><img src="uploads/pasted-1784548737052-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:68%;left:85%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(-9deg)"><img src="uploads/pasted-1784548753654-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:86%;left:15%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(-6deg)"><img src="uploads/pasted-1784548774228-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:88%;left:45%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(7deg)"><img src="uploads/pasted-1784548682802-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="position:absolute;top:90%;left:73%;width:clamp(62px,8.4vw,132px);aspect-ratio:3/4;overflow:hidden;background:#141310;transform:translate(-50%,-50%) rotate(-7deg)"><img src="uploads/pasted-1784548798094-0.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+    </div>
+    <div aria-hidden="true" data-archivevignette="" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 46% 42% at 50% 50%,#080808 0%,#080808cc 42%,transparent 72%)"></div>
+    <div data-archivetitle="" style="position:relative;z-index:2;text-align:center;mix-blend-mode:difference;color:#fff;will-change:transform,opacity;pointer-events:none">
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(48px,11vw,190px);line-height:.9;margin:0;letter-spacing:.01em">The Archive</h2>
+      <p style="font-family:'Space Mono',monospace;font-size:clamp(11px,1.1vw,14px);letter-spacing:.16em;text-transform:uppercase;margin:16px 0 0;opacity:.8">View our cross-discipline design &amp; direction</p>
+    </div>
+    <div style="position:absolute;top:44%;left:0;right:0;z-index:2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 clamp(18px,4vw,48px);font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,13px);letter-spacing:.1em;text-transform:uppercase;opacity:.55">
+      <span>Student_Run</span><span>Established_2026</span>
+    </div>
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;mix-blend-mode:difference;color:#fff">
+      <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" style="display:block;margin-top:-16px;transition:transform .3s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.08)"><div style="position:relative;width:clamp(40px,5vw,76px);height:clamp(40px,5vw,76px)"><img src="logo/circle.svg" alt="" style="width:100%;height:100%;display:block"><img src="logo/logo.svg" alt="Studio Ritu" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></div></a>
+      <div style="display:flex;gap:clamp(10px,1.6vw,22px);font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,12px);letter-spacing:.06em;opacity:.5"><span>( Identity )</span><span>( Content )</span><span>( Print )</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Manifesto" style="padding:14vh clamp(18px,4vw,48px) 6vh;max-width:1560px;margin:0 auto;box-sizing:border-box">
+    <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 6vh" data-reveal="0">
+      <span style="font-weight:700;letter-spacing:.18em;color:#EA3C1E">(01) Approach</span>
+      <span style="opacity:.5">Designed by people, not presets</span>
+    </div>
+    <p ref="{{ maniRef }}" style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(30px,4.6vw,82px);line-height:1.08;margin:0;letter-spacing:.01em">
+      <sc-for list="{{ manifestoWords }}" as="mw" hint-placeholder-count="8"><span data-mword="" style="display:inline-block;margin-right:.32em;opacity:.14">{{ mw.w }}</span></sc-for>
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,4vw,60px);margin:9vh 0 0;max-width:1100px">
+      <p style="font-family:'Space Mono',monospace;font-size:13px;line-height:1.9;margin:0;opacity:.72" data-reveal="0">Studio Ritu is an independent design practice working across strategy, identity, content and web, considered from first sketch to final pixel.</p>
+      <p style="font-family:'Space Mono',monospace;font-size:13px;line-height:1.9;margin:0;opacity:.72" data-reveal="120">We treat attention as a limited resource and design accordingly. The result is work that holds up well beyond the first scroll.</p>
+    </div>
+  </section>
+
+  <div style="overflow:hidden;padding:3vh 0;border-top:1px solid #232323;border-bottom:1px solid #232323">
+    <div data-scrollx="0.3" style="font-family:Anton,sans-serif;font-size:clamp(48px,10vw,180px);text-transform:uppercase;white-space:nowrap;line-height:1;color:transparent;-webkit-text-stroke:1.5px #2e2e2e;will-change:transform">Studio Ritu&nbsp;&nbsp;( Human-Made )&nbsp;&nbsp;Studio Ritu&nbsp;&nbsp;( Human-Made )&nbsp;&nbsp;</div>
+  </div>
+
+  <section data-screen-label="Process" ref="{{ hsWrapRef }}" style="{{ processWrapStyle }}">
+    <div style="{{ processStickyStyle }}">
+      <div data-reveal="0" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 5vh">
+        <span style="font-weight:700;letter-spacing:.18em;color:#EA3C1E">(02) How we work</span>
+        <span style="opacity:.5">Four steps, start to finish</span>
+      </div>
+      <div ref="{{ hsTrackRef }}" style="{{ processTrackStyle }}">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+          <div style="{{ st.cardStyle }}">
+            <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.08em;color:#EA3C1E">0{{ st.n }}</span>
+            <div>
+              <h3 style="{{ st.titleStyle }}">{{ st.title }}</h3>
+              <p style="font-family:'Space Mono',monospace;font-size:13px;line-height:1.8;margin:0;opacity:.7">{{ st.desc }}</p>
+            </div>
+          </div>
+        </sc-for>
+        <a href="#contact" data-cursor="TALK" style="{{ processCtaStyle }}" style-hover="background:#EA3C1E;color:#EFE8D8;border-color:#EA3C1E">
+          <span style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(36px,4.6vw,80px);line-height:.96">Your project<br>here <svg width="1em" height="1em" viewBox="0 0 12 12" style="display:inline;vertical-align:-.1em"><path d="M1 11L11 1M11 1H4.5M11 1V7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" data-screen-label="Services" style="padding:14vh clamp(18px,4vw,48px);box-sizing:border-box">
+    <div style="max-width:1560px;margin:0 auto">
+      <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 5vh" data-reveal="0">
+        <span style="font-weight:700;letter-spacing:.18em;color:#EA3C1E">(03) Services</span>
+        <span style="opacity:.5">Select to preview</span>
+      </div>
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,7vw,118px);line-height:.95;margin:0 0 8vh" data-reveal="80">What we do</h2>
+      <div style="border-top:1px solid #EFE8D8">
+        <sc-for list="{{ services }}" as="svc" hint-placeholder-count="6">
+          <div style="border-bottom:1px solid #EFE8D8">
+            <div onClick="{{ svc.toggle }}" data-cursor="{{ svc.cursorLabel }}" role="button" tabindex="0" style="display:flex;align-items:baseline;gap:clamp(10px,4vw,32px);padding:clamp(22px,2.8vw,32px) 8px;user-select:none;transition:background .35s, color .35s, padding-left .4s cubic-bezier(.22,1,.36,1)" style-hover="background:#EA3C1E;color:#EFE8D8;padding-left:32px">
+              <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#EA3C1E;min-width:34px;flex-shrink:0">0{{ svc.n }}</span>
+              <span style="font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(26px,5vw,84px);line-height:1;flex:1;min-width:0">{{ svc.title }}</span>
+              <span style="{{ svc.iconStyle }}">+</span>
+            </div>
+            <div style="{{ svc.panelStyle }}">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(20px,3vw,44px);padding:16px 8px 54px;align-items:end">
+                <div style="aspect-ratio:16/9;position:relative;overflow:hidden">
+                  <sc-if value="{{ svc.src }}">
+                    <img src="{{ svc.src }}" alt="{{ svc.title }}" style="width:100%;height:100%;object-fit:cover;object-position:{{ svc.objPos }};display:block">
+                  </sc-if>
+                  <sc-if value="{{ svc.noSrc }}">
+                    <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="{{ svc.slotId }}" shape="rect" placeholder="{{ svc.placeholder }}" hint-size="100%,320px"></x-import>
+                  </sc-if>
+                </div>
+                <div>
+                  <p style="font-family:Archivo,sans-serif;font-size:clamp(16px,1.5vw,23px);font-weight:500;line-height:1.5;margin:0 0 30px;max-width:34em">{{ svc.desc }}</p>
+                  <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" data-cursor="OPEN" style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid currentColor;padding-bottom:4px;color:#EA3C1E" style-hover="opacity:.55">See it in the wild <svg width="12" height="12" viewBox="0 0 12 12" style="display:inline;vertical-align:-.2em"><path d="M1 11L11 1M11 1H4.5M11 1V7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Featured" style="background:#EFE8D8;color:#080808;padding:12vh clamp(18px,4vw,48px) 10vh;position:relative;overflow:hidden">
+    <div style="max-width:1560px;margin:0 auto">
+      <div data-reveal="0" style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#EA3C1E;margin:0 0 clamp(20px,4vh,44px)">(04) Featured Work</div>
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,7vw,118px);line-height:.95;margin:0 0 4vh;letter-spacing:.01em" data-reveal="80">Projects that<br><span style="color:transparent;-webkit-text-stroke:2px #080808">made an impact</span></h2>
+      <p style="font-family:'Space Mono',monospace;font-size:clamp(12px,1.1vw,14px);line-height:1.8;max-width:50ch;margin:0 0 10vh;opacity:.6" data-reveal="120">A selection of work where strategy, identity and craft come together to create something people remember.</p>
+
+      <div style="display:flex;flex-direction:column;gap:clamp(72px,14vh,168px)">
+        <sc-for list="{{ featuredProjects }}" as="fp" hint-placeholder-count="3">
+          <article data-reveal="120" style="{{ fp.rowStyle }}">
+            <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" onClick="{{ fxOpen }}" data-fx-src="{{ fp.src }}" data-cursor="OPEN" style="{{ fp.figStyle }}">
+              <img src="{{ fp.src }}" alt="{{ fp.title }}" data-fxpara="{{ fp.para }}" style="{{ fp.imgStyle }}">
+            </a>
+            <div style="{{ fp.capStyle }}">
+              <span style="{{ fp.numStyle }}">{{ fp.num }}</span>
+              <span style="font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,13px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#EA3C1E">{{ fp.tag }}</span>
+              <h3 style="{{ fp.titleStyle }}">{{ fp.title }}</h3>
+              <p style="font-family:'Space Mono',monospace;font-size:clamp(12px,1.05vw,14px);line-height:1.8;margin:0;max-width:40ch;opacity:.7;text-wrap:pretty">{{ fp.desc }}</p>
+              <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" onClick="{{ fxOpen }}" data-fx-src="{{ fp.src }}" data-cursor="OPEN" style="align-self:start;margin-top:clamp(4px,1vw,12px);font-family:'Space Mono',monospace;font-size:clamp(11px,1.1vw,13px);font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid currentColor;padding-bottom:5px;color:#EA3C1E;transition:opacity .3s" style-hover="opacity:.55">View project <svg width="12" height="12" viewBox="0 0 12 12" style="display:inline;vertical-align:-.1em"><path d="M1 11L11 1M11 1H4.5M11 1V7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+
+    </div>
+  </section>
+
+  <section data-screen-label="Ethos" style="background:#EFE8D8;color:#080808;padding:13vh clamp(18px,4vw,48px);position:relative;overflow:hidden">
+    <div style="max-width:1560px;margin:0 auto;display:grid;grid-template-columns:{{ ethosCols }};gap:clamp(24px,4vw,64px);align-items:center">
+      <div data-reveal="0" style="min-width:0">
+        <div style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#EA3C1E;margin:0 0 clamp(20px,4vh,44px)">(05) Ethos</div>
+        <h2 style="font-family:Anton,sans-serif;font-weight:400;font-size:clamp(52px,11.5vw,188px);line-height:.98;text-transform:uppercase;margin:0;text-wrap:balance">If it blends in,<br><span style="color:transparent;-webkit-text-stroke:2px #080808">we failed.</span></h2>
+        <p style="font-family:'Space Mono',monospace;font-size:clamp(12px,1.15vw,14px);line-height:1.9;max-width:44ch;margin:clamp(26px,5vh,52px) 0 0;opacity:.72">Every brand we take on is built from scratch, by people. No templates, no presets. If a machine could have made it, we start again.</p>
+      </div>
+      <div data-reveal="140" style="justify-self:{{ ethosBadgeJustify }};align-self:start;margin-top:{{ ethosBadgeMarginTop }};position:relative;width:clamp(88px,24vw,360px);height:clamp(88px,24vw,360px)">
+        <svg viewBox="0 0 200 200" style="width:100%;height:100%;animation:spinSlow 20s linear infinite">
+          <defs><path id="ethosCirc" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"></path></defs>
+          <text style="font-family:'Space Mono',monospace;font-size:15.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;fill:#EA3C1E">
+            <textPath href="#ethosCirc" startOffset="0">Studio Ritu • Human-Made • Studio Ritu • Human-Made • </textPath>
+          </text>
+        </svg>
+        <div role="img" aria-label="SR" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(88px,24vw,360px);height:clamp(88px,24vw,360px);background:#EA3C1E;-webkit-mask:url(logo/logo.svg) center/contain no-repeat;mask:url(logo/logo.svg) center/contain no-repeat"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="background:#6E1522;color:#EFE8D8;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(26px,5vh,60px);padding:14vh clamp(18px,4vw,48px) 9vh;box-sizing:border-box;position:relative;overflow:hidden">
+    <div style="position:absolute;top:calc(50% + 40px);left:50%;transform:translate(-50%,-50%);width:clamp(140px,30vw,440px);opacity:.06;z-index:0;pointer-events:none"><div style="position:relative;width:100%"><img src="logo/circle.svg" alt="" style="width:100%;display:block;animation:spinSlow 60s linear infinite"><img src="logo/logo.svg" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></div></div>
+    <div style="position:absolute;top:clamp(74px,10vh,120px);left:0;right:0;z-index:2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 clamp(18px,4vw,48px);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.55">
+      <span>(06) New business &amp; collaborations</span>
+      <span>Press welcome too</span>
+    </div>
+    <div data-archivetitle="" style="position:relative;z-index:2;text-align:center;will-change:transform,opacity">
+      <p style="font-family:'Space Mono',monospace;font-size:clamp(12px,1.2vw,15px);letter-spacing:.2em;text-transform:uppercase;margin:0 0 clamp(14px,2.5vh,28px);opacity:.7">Got a project?</p>
+      <h2 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(84px,20vw,340px);line-height:.82;margin:0;letter-spacing:.01em">Let's<br><span style="color:transparent;-webkit-text-stroke:2px #EFE8D8">talk.</span></h2>
+    </div>
+    <a href="mailto:studioritu.official@gmail.com" data-cursor="SEND" style="position:relative;z-index:2;display:flex;align-items:center;gap:clamp(14px,2vw,28px);font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(30px,5.4vw,88px);line-height:1;letter-spacing:.01em;border:2px solid #EFE8D8;border-radius:999px;padding:clamp(14px,1.6vw,22px) clamp(28px,4vw,60px);transition:background .35s,color .35s" style-hover="background:#EFE8D8;color:#080808">
+      <span>Write us</span>
+      <svg width="0.8em" height="0.8em" viewBox="0 0 12 12" style="display:block;flex-shrink:0"><path d="M1 11L11 1M11 1H4.5M11 1V7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </a>
+    <div style="position:absolute;bottom:clamp(28px,5vh,52px);left:0;right:0;z-index:2;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:0 clamp(18px,4vw,48px);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.55">
+      <span>Replies within 48 hours</span>
+      <span>Student-run. Human-Made.</span>
+    </div>
+  </section>
+
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:30000;background:#080808;color:#EFE8D8;display:grid;grid-template-columns:{{ lbCols }};animation:lbIn .55s cubic-bezier(.16,1,.3,1) both;overflow:hidden">
+      <button type="button" onClick="{{ closeLb }}" data-cursor="CLOSE" aria-label="Close" style="position:fixed;top:clamp(18px,3vh,32px);left:clamp(18px,4vw,40px);z-index:3;width:clamp(48px,4vw,62px);height:clamp(48px,4vw,62px);border:1px solid rgba(241,239,233,.35);background:rgba(8,8,8,.35);backdrop-filter:blur(6px);color:#EFE8D8;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .3s,color .3s,transform .3s" style-hover="background:#EFE8D8;color:#080808;transform:rotate(90deg)"><svg width="20" height="20" viewBox="0 0 20 20" style="display:block"><path d="M4 4L16 16M16 4L4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+      <div style="position:relative;overflow:hidden;background:#141310;min-height:38vh">
+        <img src="{{ lbSrc }}" alt="{{ lbTitle }}" style="width:100%;height:100%;object-fit:cover;display:block;animation:lbImg 1.3s cubic-bezier(.16,1,.3,1) both">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,.35) 0%,transparent 22%,transparent 70%,rgba(8,8,8,.55) 100%);pointer-events:none"></div>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,2.2vw,26px);padding:clamp(70px,8vw,110px) clamp(28px,6vw,90px) clamp(40px,6vh,72px);overflow:hidden">
+        <span aria-hidden="true" style="position:absolute;top:clamp(24px,5vh,60px);right:clamp(20px,4vw,60px);font-family:Anton,sans-serif;font-size:clamp(120px,20vw,300px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(241,239,233,.08);pointer-events:none;user-select:none">SR</span>
+        <span style="position:relative;font-family:'Space Mono',monospace;font-size:clamp(11px,1.1vw,13px);font-weight:700;letter-spacing:.24em;text-transform:uppercase;opacity:.55;animation:lbRise .8s cubic-bezier(.16,1,.3,1) .18s both">{{ lbTag }}</span>
+        <h2 style="position:relative;font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(46px,6.5vw,116px);line-height:.9;margin:0;letter-spacing:.01em;text-wrap:balance;animation:lbRise .8s cubic-bezier(.16,1,.3,1) .26s both">{{ lbTitle }}</h2>
+        <p style="position:relative;font-family:'Space Mono',monospace;font-size:clamp(13px,1.15vw,16px);line-height:1.75;letter-spacing:.02em;margin:0;max-width:46ch;opacity:.85;text-wrap:pretty;animation:lbRise .8s cubic-bezier(.16,1,.3,1) .34s both">{{ lbDesc }}</p>
+        <div style="position:relative;display:flex;align-items:center;gap:clamp(20px,3vw,44px);flex-wrap:wrap;margin-top:clamp(8px,1.5vh,18px);animation:lbRise .8s cubic-bezier(.16,1,.3,1) .42s both">
+          <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" data-cursor="OPEN" style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:inherit;border-bottom:2px solid currentColor;padding-bottom:5px" style-hover="opacity:.55">See it on Are.na ↗</a>
+          <a href="#archive-close" onClick="{{ closeLb }}" data-cursor="BACK" style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.55;text-decoration:none;color:inherit" style-hover="opacity:1">← Back to the archive</a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;marqueeSpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:18,&quot;min&quot;:6,&quot;max&quot;:60,&quot;step&quot;:1,&quot;unit&quot;:&quot;s&quot;,&quot;section&quot;:&quot;Motion&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;wildCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;section&quot;:&quot;Motion&quot;,&quot;tsType&quot;:&quot;boolean&quot;},&quot;grain&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;section&quot;:&quot;Texture&quot;,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { open: 0, isMobile: false, loaded: false, lb: null, menuOpen: false };
+  _archiveCaptions = {
+    'pasted-1784548616562-0.png': { tag: 'Packaging', title: 'Aperture Skincare', desc: 'A structural packaging and unboxing system built around a warm, tactile palette, rigid boxes, custom inserts and a bottle silhouette engineered for shelf presence.' },
+    'pasted-1784548682802-0.png': { tag: 'Apparel & Merch', title: 'Revival', desc: 'Screen-printed graphics and a full merch line for a coastal streetwear label, from back-print artwork to woven labels and lookbook art direction.' },
+    'pasted-1784548737052-0.png': { tag: 'Exhibition & Print', title: 'Red Room', desc: 'A poster series and spatial identity for a gallery takeover, staged in saturated red, framed prints, wall system and a bold, room-filling typographic voice.' },
+    'pasted-1784548753654-0.png': { tag: 'Identity', title: 'Onyx Members', desc: 'Matte-black membership cards with blind-embossed marks and gold-foil detailing, part of a wider identity built on restraint, weight and touch.' },
+    'pasted-1784548774228-0.png': { tag: 'Editorial', title: 'Vogue Feature', desc: 'A fashion editorial layout exploring scale, overlap and cover typography, masthead treatments and spreads that let the imagery breathe.' },
+    'pasted-1784548798094-0.png': { tag: 'Book Design', title: 'Milk & Honey', desc: 'Cover design and interior typesetting for a poetry collection, quiet type, generous margins and a mark that carries across the series.' },
+    'pasted-1784548865096-0.png': { tag: 'Stationery', title: 'Check-Um Notepad', desc: 'A notepad and stationery system for a studio-run print imprint, grids, cover stock and an everyday object designed to be kept.' },
+    'pasted-1784548847449-0.png': { tag: 'Web & Art Direction', title: 'Nightshift', desc: 'Interface design and art direction for a late-hours product, shot on-desk, a dark, focused UI system built for long sessions.' },
+    'pasted-1784548888073-0.png': { tag: 'Signage', title: 'Street Banners', desc: 'Hand-drawn character banners and wayfinding for a market district, large-format signage that turns a street into an identity.' }
+  };
+  servicesData = [
+    { title: 'Brand Identity', slotId: 'svc-brand', src: 'uploads/pasted-1784548753654-0.png', desc: 'Names, marks and systems built to be recognised quickly and remembered longer. Identity work that holds up everywhere it appears.', placeholder: 'Drop a brand identity example' },
+    { title: 'Content / Social Design', slotId: 'svc-content', src: 'uploads/pasted-1784548774228-0.png', desc: 'Feeds, campaigns and content systems designed for social. Consistent at every crop, and recognisable post after post.', placeholder: 'Drop a content / social example' },
+    { title: 'Packaging', slotId: 'svc-pack', src: 'uploads/pasted-1784548616562-0.png', desc: 'Boxes, bottles and bags with real shelf presence, designed to be noticed before they are read.', placeholder: 'Drop a packaging example' },
+    { title: 'Posters & Print', slotId: 'svc-print', src: 'uploads/pasted-1784548737052-0.png', objPos: 'top', desc: 'Campaign print and posters with presence, built to carry across a room.', placeholder: 'Drop a poster / print example' },
+    { title: 'Everything Else', slotId: 'svc-else', src: 'uploads/pasted-1784548682802-0.png', desc: 'Album covers, merch, decks, title cards and the things that do not fit a category. If it can be designed, we can help.', placeholder: 'Drop anything you\u2019ve made' }
+  ];
+  stepsData = [
+    { title: 'Listen', desc: 'Brief, goals, audience and constraints. We ask plenty of questions and read everything you send.' },
+    { title: 'Sketch', desc: 'Directions explored on paper before pixels. We go wide first, then narrow to the strongest idea.' },
+    { title: 'Design', desc: 'The chosen direction, built into a system: type, colour, layout and behaviour, tested where it will live.' },
+    { title: 'Ship', desc: 'Final files, clean handoff and launch support, plus help maintaining it afterwards.' }
+  ];
+  manifesto = 'We design brands and websites built to earn attention and keep it.';
+  renderVals() {
+    const open = this.state.open;
+    const lb = this.state.lb;
+    return {
+      lbOpen: !!lb,
+      lbSrc: lb ? lb.src : '',
+      lbTitle: lb ? lb.title : '',
+      lbTag: lb ? lb.tag : '',
+      lbDesc: lb ? lb.desc : '',
+      lbCols: this.state.isMobile ? '1fr' : '1fr 1fr',
+      closeLb: e => { if (e && e.preventDefault) e.preventDefault(); this.setState({ lb: null }); },
+      showLoader: !this.state.loaded,
+      loaderRef: el => { this.loader = el; },
+      loaderWordRef: el => { this.loaderWord = el; },
+      loaderNumRef: el => { this.loaderNum = el; },
+      loaderBarRef: el => { this.loaderBar = el; },
+      cursorOn: (this.props.wildCursor ?? true),
+      grainOn: (this.props.grain ?? true),
+      showNavLinks: !this.state.isMobile,
+      isMobileNav: this.state.isMobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      processWrapStyle: this.state.isMobile ? { position: 'relative' } : { position: 'relative', height: '320vh' },
+      processStickyStyle: this.state.isMobile
+        ? { boxSizing: 'border-box', padding: '96px clamp(18px,4vw,48px) 8vh' }
+        : { position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', boxSizing: 'border-box', padding: '90px clamp(18px,4vw,48px) 40px' },
+      processTrackStyle: this.state.isMobile
+        ? { display: 'flex', flexDirection: 'column', gap: '16px' }
+        : { display: 'flex', gap: 'clamp(18px,2.5vw,32px)', width: 'max-content', willChange: 'transform', alignItems: 'stretch', flex: 1, minHeight: 0 },
+      processCtaStyle: this.state.isMobile
+        ? { width: '100%', border: '1px solid #EFE8D8', padding: '28px 22px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center' }
+        : { width: 'clamp(280px,38vw,560px)', border: '1px solid #EFE8D8', padding: 'clamp(24px,2.6vw,40px)', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center', transition: 'background .35s,color .35s' },
+      heroLogoOpacity: this.state.isMobile ? 0 : 1,
+      heroPaddingTop: this.state.isMobile ? '84px' : '110px',
+      heroEyebrowMargin: this.state.isMobile ? '3.5vh' : '5vh',
+      heroMetaMargin: this.state.isMobile ? '4vh 0 3vh' : '7vh 0 6vh',
+      heroMinHeight: this.state.isMobile ? 'auto' : '100vh',
+      ethosCols: this.state.isMobile ? '1fr' : '1fr auto',
+      ethosBadgeJustify: this.state.isMobile ? 'start' : 'end',
+      ethosBadgeMarginTop: this.state.isMobile ? '32px' : '0',
+      featuredGridCols: this.state.isMobile ? '1fr' : '1fr 1fr',
+      penRef: el => { this.pen = el; },
+      hsWrapRef: el => { this.hsWrap = el; },
+      hsTrackRef: el => { this.hsTrack = el; },
+      steps: this.stepsData.map((s, i) => ({
+        ...s,
+        n: i + 1,
+        cardStyle: {
+          width: this.state.isMobile ? '100%' : 'clamp(280px,38vw,560px)',
+          border: '1px solid #2c2c2c',
+          padding: this.state.isMobile ? '24px 22px' : 'clamp(24px,2.6vw,40px)',
+          boxSizing: 'border-box',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: this.state.isMobile ? 'flex-start' : 'space-between',
+          gap: this.state.isMobile ? '18px' : '30px'
+        },
+        titleStyle: {
+          fontFamily: 'Anton, sans-serif',
+          fontWeight: 400,
+          textTransform: 'uppercase',
+          fontSize: this.state.isMobile ? '40px' : 'clamp(36px,4.6vw,80px)',
+          lineHeight: .96,
+          margin: this.state.isMobile ? '0 0 16px' : '0 0 22px'
+        }
+      })),
+      featuredProjects: [
+        { num: '01', tag: 'Packaging', title: 'Aperture Skincare', src: 'uploads/pasted-1784548616562-0.png', objPos: 'center', aspect: '4 / 5', para: 0.5, desc: 'A structural packaging and unboxing system built around a warm, tactile palette, rigid boxes and a bottle silhouette engineered for shelf presence.' },
+        { num: '02', tag: 'Exhibition & Print', title: 'Red Room', src: 'uploads/pasted-1784548737052-0.png', objPos: 'top', aspect: '5 / 6', para: 0.72, desc: 'A poster series and spatial identity for a gallery takeover, staged in saturated red, framed prints and a room-filling typographic voice.' },
+        { num: '03', tag: 'Identity', title: 'Onyx Members', src: 'uploads/pasted-1784548753654-0.png', objPos: 'center', aspect: '3 / 4', para: 0.6, desc: 'Matte-black membership cards with blind-embossed marks and gold-foil detailing, part of an identity built on restraint, weight and touch.' }
+      ].map((p, i) => {
+        const reverse = i % 2 === 1;
+        const mob = this.state.isMobile;
+        return {
+          ...p,
+          rowStyle: mob
+            ? { display: 'flex', flexDirection: 'column', gap: '26px' }
+            : { display: 'grid', gridTemplateColumns: reverse ? '0.82fr 1.18fr' : '1.18fr 0.82fr', gap: 'clamp(28px,5vw,104px)', alignItems: 'center' },
+          figStyle: {
+            position: 'relative', overflow: 'hidden', aspectRatio: p.aspect, background: '#e8e6e0',
+            display: 'block', cursor: 'pointer', order: mob ? 0 : (reverse ? 2 : 0)
+          },
+          imgStyle: {
+            position: 'absolute', left: 0, top: '-12%', width: '100%', height: '124%',
+            objectFit: 'cover', objectPosition: p.objPos, display: 'block', willChange: 'transform'
+          },
+          capStyle: {
+            display: 'flex', flexDirection: 'column', alignItems: 'start',
+            gap: 'clamp(12px,1.4vw,22px)', order: 1, paddingBlock: mob ? 0 : 'clamp(8px,2vw,32px)'
+          },
+          numStyle: {
+            fontFamily: 'Anton, sans-serif', fontWeight: 400, lineHeight: .78, letterSpacing: '.01em',
+            fontSize: mob ? '84px' : 'clamp(96px,11vw,224px)',
+            color: 'transparent', WebkitTextStroke: '1.5px #EA3C1E', marginBottom: 'clamp(2px,0.8vw,10px)'
+          },
+          titleStyle: {
+            fontFamily: 'Anton, sans-serif', fontWeight: 400, textTransform: 'uppercase',
+            fontSize: mob ? 'clamp(40px,12vw,68px)' : 'clamp(40px,4.6vw,92px)',
+            lineHeight: .9, margin: 0, letterSpacing: '.01em'
+          }
+        };
+      }),
+      fxOpen: e => {
+        const row = e.currentTarget;
+        const src = row && row.getAttribute('data-fx-src');
+        if (!src) return;
+        const key = src.split('/').pop();
+        const cap = this._archiveCaptions[key];
+        if (cap) { if (e.preventDefault) e.preventDefault(); this.setState({ lb: { src, title: cap.title, tag: cap.tag, desc: cap.desc } }); }
+      },
+      blobRef: el => { this.blob = el; },
+      navRef: el => { this.nav = el; },
+      navLogoRef: el => { this.navLogo = el; },
+      contactBtnRef: el => {
+        this.contactBtn = el;
+        if (el && !el._hoverBound) {
+          el._hoverBound = true;
+          el.addEventListener('mouseenter', () => {
+            this._navBtnHover = true;
+            el.style.background = '#EA3C1E';
+            el.style.color = '#EFE8D8';
+            el.style.borderColor = '#EA3C1E';
+          });
+          el.addEventListener('mouseleave', () => {
+            this._navBtnHover = false;
+            const c = this._navInContact ? '#EFE8D8' : '#EA3C1E';
+            el.style.background = 'transparent';
+            el.style.color = c;
+            el.style.borderColor = c;
+          });
+        }
+      },
+      toTopRef: el => { this.toTop = el; },
+      blobLabelRef: el => { this.blobLabel = el; },
+      maniRef: el => { this.mani = el; },
+      heroRef: el => { this.hero = el; },
+      manifestoWords: this.manifesto.split(' ').map(w => ({ w })),
+      services: this.servicesData.map((s, i) => ({
+        ...s,
+        objPos: s.objPos || 'center',
+        noSrc: !s.src,
+        n: i + 1,
+        cursorLabel: open === i ? 'CLOSE' : 'OPEN',
+        toggle: () => this.setState({ open: open === i ? null : i }),
+        iconStyle: {
+          fontFamily: "'Space Mono', monospace", fontSize: 'clamp(22px,2.6vw,30px)', lineHeight: 1, alignSelf: 'center',
+          transform: open === i ? 'rotate(135deg)' : 'rotate(0deg)',
+          transition: 'transform .5s cubic-bezier(.22,1,.36,1)'
+        },
+        panelStyle: {
+          overflow: 'hidden',
+          maxHeight: open === i ? '1400px' : '0px',
+          opacity: open === i ? 1 : 0,
+          transition: open === i
+            ? 'max-height .9s cubic-bezier(.76,0,.24,1), opacity .5s ease .15s'
+            : 'max-height .6s cubic-bezier(.76,0,.24,1), opacity .3s ease'
+        }
+      }))
+    };
+  }
+  _runLoader() {
+    const reduce = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const dur = reduce ? 400 : 2100;
+    const t0 = performance.now();
+    const tick = now => {
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(eased * 100);
+      if (this.loaderNum) this.loaderNum.textContent = val < 10 ? '0' + val : String(val);
+      if (this.loaderBar) this.loaderBar.style.width = eased * 100 + '%';
+      if (this.loaderWord) {
+        this.loaderWord.style.clipPath = 'inset(0 ' + (100 - eased * 100).toFixed(2) + '% 0 0)';
+      }
+      if (p < 1) { this._loaderRAF = requestAnimationFrame(tick); }
+      else { this._exitLoader(); }
+    };
+    this._loaderRAF = requestAnimationFrame(tick);
+  }
+  _exitLoader() {
+    if (this.loader) {
+      this.loader.style.clipPath = 'inset(0 0 100% 0)';
+      setTimeout(() => this.setState({ loaded: true }), 1000);
+    } else {
+      this.setState({ loaded: true });
+    }
+  }
+  componentDidMount() {
+    this._sc = null;
+    this._runLoader();
+    this._fine = typeof matchMedia !== 'undefined' && matchMedia('(pointer:fine)').matches;
+    this._onResize = () => {
+      const m = window.innerWidth < 720;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m });
+    };
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+    if ((this.props.wildCursor ?? true) && this._fine) this._setupCursor();
+    this._setupSmoothScroll();
+    this._onClick = e => {
+      const im = e.target && e.target.closest ? e.target.closest('[data-archivelayer] img') : null;
+      if (im) {
+        const key = (im.getAttribute('src') || '').split('/').pop();
+        const cap = this._archiveCaptions[key];
+        if (cap) { this.setState({ lb: { src: im.getAttribute('src'), title: cap.title, tag: cap.tag, desc: cap.desc } }); return; }
+      }
+      if (!this._fine) return;
+      for (let i = 0; i < 7; i++) {
+        const s = document.createElement('span');
+        s.textContent = '\u2726';
+        s.style.cssText = 'position:fixed;left:' + e.clientX + 'px;top:' + e.clientY + 'px;font-size:' + (14 + Math.random() * 16) + 'px;color:#EFE8D8;mix-blend-mode:difference;z-index:10001;pointer-events:none;line-height:1';
+        document.body.appendChild(s);
+        const a = Math.random() * Math.PI * 2, d = 55 + Math.random() * 95;
+        const anim = s.animate([
+          { transform: 'translate(-50%,-50%) rotate(0deg) scale(1)', opacity: 1 },
+          { transform: 'translate(calc(-50% + ' + (Math.cos(a) * d) + 'px), calc(-50% + ' + (Math.sin(a) * d) + 'px)) rotate(200deg) scale(.1)', opacity: 0 }
+        ], { duration: 650, easing: 'cubic-bezier(.22,1,.36,1)' });
+        anim.onfinish = () => s.remove();
+      }
+    };
+    document.addEventListener('click', this._onClick);
+    this._onAnchor = e => {
+      const a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!a) return;
+      const id = a.getAttribute('href').slice(1);
+      const el = id && document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      const sc = this._scroller();
+      const scTop = (sc === document.scrollingElement || sc === document.documentElement || sc === document.body) ? 0 : sc.getBoundingClientRect().top;
+      const target = Math.max(0, el.getBoundingClientRect().top - scTop + sc.scrollTop);
+      if (this._smoothTo(target)) { this._anchorHideNav = true; return; }
+      const start = sc.scrollTop, diff = target - start, t0 = performance.now(), dur = 680;
+      const step = now => {
+        const p = Math.min(1, (now - t0) / dur), e2 = 1 - Math.pow(1 - p, 3);
+        sc.scrollTop = start + diff * e2;
+        if (p < 1) requestAnimationFrame(step);
+        else if (this.nav && !this._navHidden) { this._navHidden = true; this.nav.style.transform = 'translateY(-130%)'; }
+      };
+      requestAnimationFrame(step);
+    };
+    document.addEventListener('click', this._onAnchor);
+    this._onNavPeek = e => {
+      if (!this.nav) return;
+      if (e.clientY <= 90 && this._navHidden) {
+        this._navHidden = false;
+        this._navPeeked = true;
+        this._navRefY = this._getY();
+        this.nav.style.transform = 'none';
+      } else if (e.clientY > 120 && this._navPeeked && !this._navHidden) {
+        this._navHidden = true;
+        this._navPeeked = false;
+        this.nav.style.transform = 'translateY(-130%)';
+      }
+    };
+    document.addEventListener('mousemove', this._onNavPeek, { passive: true });
+    document.querySelectorAll('[data-archivelayer] img').forEach(im => { im.style.cursor = 'pointer'; });
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(42px) scale(.99)';
+      el.style.transition = 'opacity 1.3s cubic-bezier(.16,1,.3,1), transform 1.3s cubic-bezier(.16,1,.3,1)';
+      el.style.transitionDelay = (el.getAttribute('data-reveal') || '0') + 'ms';
+    });
+    this._io = new IntersectionObserver(entries => entries.forEach(x => {
+      if (x.isIntersecting) { x.target.style.opacity = '1'; x.target.style.transform = 'none'; this._io.unobserve(x.target); }
+    }), { threshold: 0.12 });
+    els.forEach(el => this._io.observe(el));
+    this._lastY = this._getY(); this._skew = 0; this._velT = 0; this._mnx = 0; this._mny = 0;
+    this._onScroll = () => {
+      if (this._sPend) return;
+      this._sPend = true;
+      requestAnimationFrame(() => { this._sPend = false; this._fx(); });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true, capture: true });
+    const loop = () => {
+      const yNow = this._getY();
+      if (yNow !== this._lastFxY) { this._lastFxY = yNow; this._fx(); }
+      if (this._cursorLive && this.blob) {
+        if (this._hot && !this._wasHot) { this._bx = this._cx; this._by = this._cy; }
+        this._wasHot = this._hot;
+        this._bx += (this._cx - this._bx) * 0.22;
+        this._by += (this._cy - this._by) * 0.22;
+        const s = this._hot ? 1 : 0;
+        this.blob.style.transform = 'translate(' + this._bx + 'px,' + this._by + 'px) translate(-50%,-50%)';
+        this.blob.style.scale = s;
+        if (this.blobLabel) this.blobLabel.style.opacity = this._hot ? '1' : '0';
+      }
+      if (this.hero && this._fine) {
+        this._hx = (this._hx || 0) + ((this._mnx * 0.35) - (this._hx || 0)) * 0.05;
+        this._hy = (this._hy || 0) + ((this._mny * 8) - (this._hy || 0)) * 0.05;
+        this.hero.style.transform = 'rotate(' + this._hx + 'deg) translate(' + (this._mnx * 6) + 'px,' + this._hy + 'px)';
+      }
+      this._skew += (this._velT - this._skew) * 0.12;
+      this._velT *= 0.9;
+      if (Math.abs(this._skew) > 0.01) {
+        document.querySelectorAll('[data-marquee]').forEach(el => { el.style.transform = 'skewX(' + (-this._skew * 0.5) + 'deg)'; });
+      }
+      this._raf = requestAnimationFrame(loop);
+    };
+    loop();
+    this._applyMarqueeSpeed();
+    this._fx();
+  }
+  _setupSmoothScroll() {
+    if (this._smooth) return;
+    const reduce = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const coarse = typeof matchMedia !== 'undefined' && matchMedia('(pointer:coarse)').matches;
+    if (reduce || coarse) return;
+    const sc = this._scroller();
+    if (!sc) return;
+    this._smooth = true;
+    this._sTarget = this._sCur = this._sLast = sc.scrollTop;
+    const maxScroll = () => sc.scrollHeight - (sc.clientHeight || window.innerHeight);
+    this._onWheel = e => {
+      if (this.state.menuOpen || this.state.lb) return;
+      if (e.ctrlKey) return;
+      e.preventDefault();
+      this._sTarget = Math.max(0, Math.min(maxScroll(), this._sTarget + e.deltaY));
+    };
+    window.addEventListener('wheel', this._onWheel, { passive: false });
+    const tick = () => {
+      if (Math.abs(sc.scrollTop - this._sLast) > 2) { this._sCur = this._sTarget = sc.scrollTop; }
+      this._sTarget = Math.max(0, Math.min(maxScroll(), this._sTarget));
+      const now = performance.now();
+      let lerp = 0.07;
+      const aEl = this._archiveEl || (this._archiveEl = document.querySelector('[data-screen-label="Archive"]'));
+      if (aEl && !this.state.menuOpen && !this.state.lb) {
+        const aY = aEl.getBoundingClientRect().top + this._sLast;
+        const zone = window.innerHeight * 0.6;
+        const dist = Math.abs(this._sCur - aY);
+        if (this._sCur < aY - zone) this._dwelled = false;
+        if (dist < zone) {
+          const closeness = 1 - dist / zone;
+          lerp = 0.07 - 0.052 * (closeness * closeness);
+          if (!this._dwelled && this._sTargetPrev != null && this._sTargetPrev < aY && this._sTarget >= aY - 2 && this._sTarget > this._sCur) {
+            this._dwelled = true; this._dwellUntil = now + 650;
+          }
+          if (now < this._dwellUntil) {
+            this._sTarget += (aY - this._sTarget) * 0.16;
+            if (Math.abs(aY - this._sCur) < 2) { this._sCur = this._sTarget = aY; }
+          }
+        }
+      }
+      this._sTargetPrev = this._sTarget;
+      const d = this._sTarget - this._sCur;
+      this._sCur += d * lerp;
+      if (Math.abs(d) < 0.35) {
+        this._sCur = this._sTarget;
+        if (this._anchorHideNav) { this._anchorHideNav = false; if (this.nav && !this._navHidden) { this._navHidden = true; this.nav.style.transform = 'translateY(-130%)'; } }
+      }
+      const v = Math.round(this._sCur);
+      if (v !== this._sLast) { sc.scrollTop = v; this._sLast = v; }
+      this._smoothRAF = requestAnimationFrame(tick);
+    };
+    this._smoothRAF = requestAnimationFrame(tick);
+  }
+  _smoothTo(target) {
+    if (this._smooth) { this._sTarget = target; return true; }
+    return false;
+  }
+  _setupCursor() {
+    if (this._cursorLive) return;
+    this._cursorLive = true;
+    this._cst = document.createElement('style');
+    this._cst.textContent = '*{cursor:none !important}';
+    document.head.appendChild(this._cst);
+    this._cx = this._bx = window.innerWidth / 2;
+    this._cy = this._by = window.innerHeight / 2;
+    this._onMove = e => {
+      this._cx = e.clientX; this._cy = e.clientY;
+      this._mnx = (e.clientX / window.innerWidth) * 2 - 1;
+      this._mny = (e.clientY / window.innerHeight) * 2 - 1;
+      if (this.pen) this.pen.style.transform = 'translate(' + (e.clientX - 14) + 'px,' + (e.clientY - 38) + 'px)';
+    };
+    this._onOver = e => {
+      const t = e.target && e.target.closest ? e.target.closest('[data-cursor]') : null;
+      this._hot = !!t;
+      if (this.blobLabel) this.blobLabel.textContent = t ? t.getAttribute('data-cursor') : '';
+    };
+    document.addEventListener('mousemove', this._onMove);
+    document.addEventListener('mouseover', this._onOver);
+  }
+  _teardownCursor() {
+    if (!this._cursorLive) return;
+    this._cursorLive = false;
+    if (this._cst) this._cst.remove();
+    document.removeEventListener('mousemove', this._onMove);
+    document.removeEventListener('mouseover', this._onOver);
+  }
+  _applyMarqueeSpeed() {
+    const s = (this.props.marqueeSpeed ?? 22) + 's';
+    document.querySelectorAll('[data-marquee-track]').forEach(el => { el.style.animationDuration = s; });
+  }
+  _getY() {
+    return (document.scrollingElement && document.scrollingElement.scrollTop) || document.body.scrollTop || window.scrollY;
+  }
+  _scroller() {
+    if (this._sc) return this._sc;
+    let el = document.getElementById('services') || document.getElementById('top');
+    while (el) {
+      if (el.scrollHeight > el.clientHeight + 4) {
+        const oy = getComputedStyle(el).overflowY;
+        if (oy === 'auto' || oy === 'scroll' || oy === 'overlay') { this._sc = el; return el; }
+      }
+      el = el.parentElement;
+    }
+    this._sc = document.scrollingElement || document.documentElement;
+    return this._sc;
+  }
+  _isLight(c) {
+    if (!c) return false;
+    const m = c.match(/[\d.]+/g);
+    if (!m || m.length < 3) return false;
+    return (0.299 * +m[0] + 0.587 * +m[1] + 0.114 * +m[2]) > 140;
+  }
+  _fx() {
+    const y = this._getY();
+    const v = Math.max(-10, Math.min(10, (y - this._lastY) * 0.3));
+    this._lastY = y;
+    this._velT = v;
+    const vh = window.innerHeight;
+    document.querySelectorAll('[data-para]').forEach(el => {
+      const f = parseFloat(el.getAttribute('data-para'));
+      const r = el.getBoundingClientRect();
+      if (r.bottom > -200 && r.top < vh + 200) el.style.transform = 'translateY(' + (y * f * 0.4) + 'px)';
+    });
+    this._featuredParallax(vh);
+    document.querySelectorAll('[data-scrollx]').forEach(el => {
+      const f = parseFloat(el.getAttribute('data-scrollx') || '1');
+      const r = el.getBoundingClientRect();
+      const p = (vh - r.top) / (vh + r.height);
+      el.style.transform = 'translateX(' + ((0.5 - p) * 100 * f) + 'vw)';
+    });
+    if (this.nav) {
+      if (this._navRefY == null) this._navRefY = y;
+      if (y > this._navRefY + 8 && y > vh * 0.55) {
+        if (!this._navHidden) { this._navHidden = true; this.nav.style.transform = 'translateY(-130%)'; }
+        this._navRefY = y;
+      } else if (y < this._navRefY - 8) {
+        if (this._navHidden) { this._navHidden = false; this.nav.style.transform = 'none'; }
+        this._navRefY = y;
+      }
+      const nowNav = performance.now();
+      if (nowNav - (this._navProbeT || 0) > 140) {
+        this._navProbeT = nowNav;
+        const prevPE = this.nav.style.pointerEvents;
+        this.nav.style.pointerEvents = 'none';
+        const probeEl = document.elementFromPoint(Math.round(window.innerWidth * 0.5), 24);
+        this.nav.style.pointerEvents = prevPE;
+        let bg = '', node = probeEl;
+        while (node) { const c = getComputedStyle(node).backgroundColor; if (c && c !== 'transparent' && !/rgba\(0, 0, 0, 0\)/.test(c)) { bg = c; break; } node = node.parentElement; }
+        const light = this._isLight(bg);
+        if (light !== this._navLight) {
+          this._navLight = light;
+          this.nav.style.color = light ? '#080808' : '#EFE8D8';
+          if (this.navLogo) this.navLogo.style.filter = light ? 'brightness(0)' : 'none';
+        }
+        const inContact = !!(probeEl && probeEl.closest && probeEl.closest('#contact'));
+        if (inContact !== this._navInContact) {
+          this._navInContact = inContact;
+          if (this.contactBtn && !this._navBtnHover) {
+            this.contactBtn.style.color = inContact ? '#EFE8D8' : '#EA3C1E';
+            this.contactBtn.style.borderColor = inContact ? '#EFE8D8' : '#EA3C1E';
+          }
+        }
+      }
+    }
+    if (this.toTop) {
+      const show = y > vh * 0.8;
+      if (show !== this._toTopShown) {
+        this._toTopShown = show;
+        this.toTop.style.opacity = show ? '1' : '0';
+        this.toTop.style.transform = show ? 'none' : 'translateY(16px)';
+        this.toTop.style.pointerEvents = show ? 'auto' : 'none';
+      }
+      if (show) {
+        const prevPE = this.toTop.style.pointerEvents;
+        this.toTop.style.pointerEvents = 'none';
+        let el = document.elementFromPoint(window.innerWidth - 42, vh - 42);
+        this.toTop.style.pointerEvents = prevPE;
+        let bg = '';
+        while (el) { const c = getComputedStyle(el).backgroundColor; if (c && c !== 'transparent' && !/rgba\(0, 0, 0, 0\)/.test(c)) { bg = c; break; } el = el.parentElement; }
+        const light = this._isLight(bg);
+        if (light !== this._toTopLight) {
+          this._toTopLight = light;
+          this.toTop.style.background = light ? '#080808' : '#EFE8D8';
+          this.toTop.style.color = light ? '#EFE8D8' : '#080808';
+          this.toTop.style.borderColor = light ? '#080808' : '#EFE8D8';
+        }
+      }
+    }
+    if (this.hsWrap && this.hsTrack && !this.state.isMobile) {
+      const r = this.hsWrap.getBoundingClientRect();
+      const total = r.height - vh;
+      const p = Math.max(0, Math.min(1, -r.top / (total || 1)));
+      const dist = Math.max(0, this.hsTrack.scrollWidth - window.innerWidth + 96);
+      this.hsTrack.style.transform = 'translateX(' + (-p * dist) + 'px)';
+    } else if (this.hsTrack && this.state.isMobile && this.hsTrack.style.transform) {
+      this.hsTrack.style.transform = 'none';
+    }
+    document.querySelectorAll('[data-archivelayer]').forEach(al => {
+      const sec = al.closest('section');
+      if (!sec) return;
+      const r = sec.getBoundingClientRect();
+      const p = Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.9)));
+      const e = 1 - Math.pow(1 - p, 3);
+      al.style.transform = 'scale(' + (0.66 + e * 0.34).toFixed(3) + ') rotate(' + ((1 - e) * 7).toFixed(2) + 'deg)';
+      al.style.opacity = Math.min(1, p * 1.3).toFixed(2);
+      const t = sec.querySelector('[data-archivetitle]');
+      if (t) { t.style.transform = 'scale(' + (0.88 + e * 0.12).toFixed(3) + ')'; t.style.opacity = Math.min(1, p * 1.5).toFixed(2); }
+    });
+    if (this.mani) {
+      const r = this.mani.getBoundingClientRect();
+      const p = Math.max(0, Math.min(1, (vh * 0.85 - r.top) / (r.height + vh * 0.2)));
+      const words = this.mani.querySelectorAll('[data-mword]');
+      const n = words.length;
+      words.forEach((w, i) => {
+        const on = i < p * n * 1.6;
+        w.style.opacity = on ? '1' : '0.14';
+        w.style.transform = on ? 'none' : 'translateY(6px)';
+        w.style.transition = 'opacity .35s, transform .35s';
+      });
+    }
+  }
+  _featuredParallax(vh) {
+    document.querySelectorAll('[data-fxpara]').forEach(el => {
+      const f = parseFloat(el.getAttribute('data-fxpara') || '0');
+      const r = el.getBoundingClientRect();
+      if (r.bottom < -240 || r.top > vh + 240) return;
+      const off = ((r.top + r.height / 2) - vh / 2) / vh;
+      el.style.transform = 'translateY(' + (off * f * 88).toFixed(1) + 'px)';
+    });
+  }
+  componentDidUpdate() {
+    this._applyMarqueeSpeed();
+    const want = (this.props.wildCursor ?? true) && this._fine;
+    if (want && !this._cursorLive) this._setupCursor();
+    if (!want && this._cursorLive) this._teardownCursor();
+  }
+  componentWillUnmount() {
+    this._teardownCursor();
+    if (this._onWheel) window.removeEventListener('wheel', this._onWheel);
+    if (this._smoothRAF) cancelAnimationFrame(this._smoothRAF);
+    if (this._io) this._io.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+    document.removeEventListener('mousemove', this._onNavPeek);
+    document.removeEventListener('click', this._onAnchor);
+    window.removeEventListener('scroll', this._onScroll, { capture: true });
+    window.removeEventListener('resize', this._onResize);
+    document.removeEventListener('click', this._onClick);
+  }
+}
+</script>
+</body>
+</html>
