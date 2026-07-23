@@ -128,7 +128,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
       <div style="position:relative;width:100%;aspect-ratio:1/1"><div style="width:100%;height:100%;background:#E7E3DD;-webkit-mask:url(logo/circle.svg) center/contain no-repeat;mask:url(logo/circle.svg) center/contain no-repeat;animation:spinSlow 60s linear infinite"></div><div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#E7E3DD;-webkit-mask:url(logo/logo.svg) center/contain no-repeat;mask:url(logo/logo.svg) center/contain no-repeat"></div></div>
     </div>
     <p style="position:relative;z-index:1;font-family:'Space Mono',monospace;font-size:clamp(12px,1.3vw,14px);font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin:0 0 {{ heroEyebrowMargin }};display:flex;align-items:center;gap:12px;flex-wrap:wrap;animation:fadeUp 1s cubic-bezier(.22,1,.36,1) .1s both">
-      <span style="width:10px;height:10px;background:#8A4E2A;display:inline-block;flex-shrink:0"></span>
+      <span style="width:10px;height:10px;background:#C9803F;display:inline-block;flex-shrink:0"></span>
       Independent design studio. Human-Made.
     </p>
     <h1 ref="{{ heroRef }}" style="position:relative;z-index:1;font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(42px,12.5vw,214px);line-height:.94;margin:0;letter-spacing:.01em;will-change:transform">
@@ -170,12 +170,12 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
       <h2 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(48px,11vw,190px);line-height:.9;margin:0;letter-spacing:.01em">The Archive</h2>
       <p style="font-family:'Space Mono',monospace;font-size:clamp(11px,1.1vw,14px);letter-spacing:.16em;text-transform:uppercase;margin:16px 0 0;opacity:.8">View our cross-discipline design &amp; direction</p>
     </div>
-    <div style="position:absolute;top:44%;left:0;right:0;z-index:2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 clamp(18px,4vw,48px);font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,13px);letter-spacing:.1em;text-transform:uppercase;opacity:.55">
+    <div style="position:absolute;top:44%;left:0;right:0;z-index:2;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 clamp(18px,4vw,48px);font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,13px);letter-spacing:.1em;text-transform:uppercase;color:#C9803F;opacity:.85">
       <span>Student_Run</span><span>Established_2026</span>
     </div>
     <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;color:#E7E3DD">
-      <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" style="display:block;margin-top:-16px;transition:transform .3s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.08)"><div style="position:relative;width:clamp(40px,5vw,76px);height:clamp(40px,5vw,76px)"><img decoding="async" src="logo/circle.svg" alt="" style="width:100%;height:100%;display:block"><img decoding="async" src="logo/logo.svg" alt="Studio Ritu" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block"></div></a>
-      <div style="display:flex;gap:clamp(10px,1.6vw,22px);font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,12px);letter-spacing:.06em;opacity:.5"><span>( Identity )</span><span>( Content )</span><span>( Print )</span></div>
+      <a href="https://www.are.na/studio-ritu/index" target="_blank" rel="noopener" style="display:block;margin-top:-16px;transition:transform .3s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.08)"><div style="position:relative;width:clamp(40px,5vw,76px);height:clamp(40px,5vw,76px)"><div style="width:100%;height:100%;background:#E7E3DD;-webkit-mask:url(logo/circle.svg) center/contain no-repeat;mask:url(logo/circle.svg) center/contain no-repeat"></div><div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#E7E3DD;-webkit-mask:url(logo/logo.svg) center/contain no-repeat;mask:url(logo/logo.svg) center/contain no-repeat"></div></div></a>
+      <div style="display:flex;gap:clamp(10px,1.6vw,22px);font-family:'Space Mono',monospace;font-size:clamp(10px,1vw,12px);letter-spacing:.06em;color:#C9803F;opacity:.75"><span>( Identity )</span><span>( Content )</span><span>( Print )</span></div>
     </div>
   </section>
 
@@ -201,13 +201,13 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
   <section data-screen-label="Process" ref="{{ hsWrapRef }}" style="{{ processWrapStyle }}">
     <div style="{{ processStickyStyle }}">
       <div data-reveal="0" style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 5vh">
-        <span style="font-weight:700;letter-spacing:.18em">(02) How we work</span>
+        <span style="font-weight:700;letter-spacing:.18em;color:#C9803F">(02) How we work</span>
         <span style="opacity:.5">Four steps, start to finish</span>
       </div>
       <div ref="{{ hsTrackRef }}" style="{{ processTrackStyle }}">
         <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
           <div style="{{ st.cardStyle }}">
-            <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.08em;opacity:.5">0{{ st.n }}</span>
+            <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.08em;color:#C9803F">0{{ st.n }}</span>
             <div>
               <h3 style="{{ st.titleStyle }}">{{ st.title }}</h3>
               <p style="font-family:'Space Mono',monospace;font-size:13px;line-height:1.8;margin:0;opacity:.7">{{ st.desc }}</p>
@@ -221,18 +221,18 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
     </div>
   </section>
 
-  <section id="services" data-screen-label="Services" style="padding:14vh clamp(18px,4vw,48px);box-sizing:border-box">
+  <section id="services" data-screen-label="Services" style="background:#5B0D18;color:#E7E3DD;padding:14vh clamp(18px,4vw,48px);box-sizing:border-box">
     <div style="max-width:1560px;margin:0 auto">
       <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 5vh" data-reveal="0">
-        <span style="font-weight:700;letter-spacing:.18em">(03) Services</span>
-        <span style="opacity:.5">Select to preview</span>
+        <span style="font-weight:700;letter-spacing:.18em;color:#C9803F">(03) Services</span>
+        <span style="opacity:.6">Select to preview</span>
       </div>
       <h2 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,7vw,118px);line-height:.95;margin:0 0 8vh" data-reveal="80">What we do</h2>
       <div style="border-top:1px solid #E7E3DD">
         <sc-for list="{{ services }}" as="svc" hint-placeholder-count="6">
           <div style="border-bottom:1px solid #E7E3DD">
             <div onClick="{{ svc.toggle }}" data-cursor="{{ svc.cursorLabel }}" role="button" tabindex="0" style="display:flex;align-items:baseline;gap:clamp(10px,4vw,32px);padding:clamp(22px,2.8vw,32px) 8px;user-select:none;transition:background .35s, color .35s, padding-left .4s cubic-bezier(.22,1,.36,1)" style-hover="background:#E7E3DD;color:#1B1B1F;padding-left:32px">
-              <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;opacity:.5;min-width:34px;flex-shrink:0">0{{ svc.n }}</span>
+              <span style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:#C9803F;min-width:34px;flex-shrink:0">0{{ svc.n }}</span>
               <span style="font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(26px,5vw,84px);line-height:1;flex:1;min-width:0">{{ svc.title }}</span>
               <span style="{{ svc.iconStyle }}">+</span>
             </div>
@@ -260,7 +260,7 @@ body::-webkit-scrollbar{display:none;width:0;height:0}
 
   <section data-screen-label="Featured" style="background:#E7E3DD;color:#1B1B1F;padding:12vh clamp(18px,4vw,48px) 10vh;position:relative;overflow:hidden">
     <div style="max-width:1560px;margin:0 auto">
-      <div data-reveal="0" style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.5;margin:0 0 clamp(20px,4vh,44px)">(04) Featured Work</div>
+      <div data-reveal="0" style="font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8A4E2A;margin:0 0 clamp(20px,4vh,44px)">(04) Featured Work</div>
       <h2 style="font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,7vw,118px);line-height:.95;margin:0 0 4vh;letter-spacing:.01em" data-reveal="80">Projects that<br><span style="color:transparent;-webkit-text-stroke:2px #1B1B1F">made an impact</span></h2>
       <p style="font-family:'Space Mono',monospace;font-size:clamp(12px,1.1vw,14px);line-height:1.8;max-width:50ch;margin:0 0 10vh;opacity:.6" data-reveal="120">A selection of work where strategy, identity and craft come together to create something people remember.</p>
 
@@ -404,8 +404,8 @@ class Component extends DCLogic {
         ? { display: 'flex', flexDirection: 'column', gap: '16px' }
         : { display: 'flex', gap: 'clamp(18px,2.5vw,32px)', width: 'max-content', willChange: 'transform', alignItems: 'stretch', flex: 1, minHeight: 0 },
       processCtaStyle: this.state.isMobile
-        ? { width: '100%', border: '1px solid #E7E3DD', padding: '28px 22px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center' }
-        : { width: 'clamp(280px,38vw,560px)', border: '1px solid #E7E3DD', padding: 'clamp(24px,2.6vw,40px)', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center', transition: 'background .35s,color .35s' },
+        ? { width: '100%', background: '#083B3A', padding: '28px 22px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center' }
+        : { width: 'clamp(280px,38vw,560px)', background: '#083B3A', padding: 'clamp(24px,2.6vw,40px)', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center', transition: 'background .35s,color .35s' },
       heroLogoOpacity: this.state.isMobile ? 0 : 1,
       heroPaddingTop: this.state.isMobile ? '84px' : '110px',
       heroEyebrowMargin: this.state.isMobile ? '3.5vh' : '5vh',
@@ -423,7 +423,7 @@ class Component extends DCLogic {
         n: i + 1,
         cardStyle: {
           width: this.state.isMobile ? '100%' : 'clamp(280px,38vw,560px)',
-          border: '1px solid #2c2c2c',
+          border: '1px solid rgba(201,128,63,.32)',
           padding: this.state.isMobile ? '24px 22px' : 'clamp(24px,2.6vw,40px)',
           boxSizing: 'border-box',
           display: 'flex',
